@@ -307,9 +307,12 @@
 
 				<!-- start kk -->
 				<div id="kk">
-					<h1>Kartu Keluarga</h1>
-					<div class="panel panel-primary">
-						<div class="panel-heading">Kartu Keluarga</div>
+				<div class="panel panel-primary">
+					<div class="panel-heading">Kartu Keluarga</div>
+					<div class="panel-body">
+					
+					<div class="panel panel-default">
+						<div class="panel-heading">Header Kartu Keluarga</div>
 						<div class="panel-body">
 							<form>
 								<div class="form-group">
@@ -351,11 +354,23 @@
 								</div>
 								<div class="form-group">
 									<label for="">Jumlah Anggota Keluarga</label>
-									<input type="number" name="jumlah_anggota_keluarga" class="form-control" placeholder="Masukkan Jumlah Anggota Keluarga" required>
+									<input type="number" id="jumlah_keluarga" name="jumlah_anggota_keluarga" class="form-control" placeholder="Masukkan Jumlah Anggota Keluarga" required>
 								</div>
-
-								<h3>Lengkapi Biodata Anda</h3>
-
+							</form>
+						</div>
+					</div>
+					
+					<br>
+					<!-- <h3>Lengkapi Biodata Anda</h3> -->
+					<form>
+						
+								
+					<div id="biodata">
+					
+						<!-- <div class="panel panel-default">
+							<div class="panel-heading">Detail Kartu Keluarga</div>
+							<div class="panel-body">
+							<form>
 								<div class="form-group">
 									<label for="">Nama Lengkap</label>
 									<input type="text" name="nama_lengkap" class="form-control" placeholder="Masukkan Nama Lengkap" required>
@@ -546,12 +561,20 @@
 									<label for="">Keterangan (Catatan Lain)</label>
 									<input type="text" name="note" class="form-control" placeholder="Masukkan Keterangan (Catatan Lain)" required>
 								</div>
-								<div class="text-right">
-									<button type="submit" class="btn btn-primary">Submit</button>
-								</div>
-							</form>	
-						</div>
+							</form>
+							</div>
+						</div> -->
 					</div>
+					</form>
+
+					<br>
+					<div class="text-right">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+
+					</div>
+				</div>
+
 				</div>
 
 				<!-- start ktp -->
@@ -642,6 +665,7 @@
 			</div>
 			</div>
 
+			<!-- status regis -->
 			<div class="col-sm-4 col-xs-12">
 				<!-- start status regis -->
 				<div class="panel-group">
@@ -677,11 +701,11 @@
 				
 
 			</div>
+
 		</div>
-
-
+		<!-- end row -->
 	</div>
-
+	<!-- end container -->
 </body>
 
 </html>
@@ -720,6 +744,24 @@
 			$("#kk").hide();
 			$("#ktp").hide();
 		}
+	});
+
+	var jumlah_keluarga;
+	$("#jumlah_keluarga").on('change', function () {
+		jumlah_keluarga = $(this).val();
+		console.log(jumlah_keluarga);
+		$.ajax({
+			url : "<?php echo base_url()?>Index/kk",
+			type : 'GET',
+			data :  {'jumlah_keluarga' : jumlah_keluarga},
+			dataType: 'json',
+			success : function(data){
+				$('#biodata').html(data);
+			},
+			error: function(){
+				alert('terjadi error');
+			}
+		});
 
 	});
 

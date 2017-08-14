@@ -23,7 +23,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+// $config['base_url'] = 'http://demo.madanisoftware.com/Web_kel/';
 $config['base_url'] = 'http://localhost:8090/Web_kel/';
+
 
 /*
 |--------------------------------------------------------------------------
