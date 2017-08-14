@@ -8,21 +8,21 @@
 <body>
 
 <div class="container">  
-  <form id="contact" action="" method="post">
+  <form id="contact" action="<?php echo base_url('Ho_recom/insert'); ?>" method="post">
     <span>Form HO Recom</span>
     <h4>Kelurahan Landungsari</h4>
     <fieldset>
-      <input placeholder="Nama Lengkap" type="text" tabindex="1" required autofocus>
+      <input placeholder="Nama Lengkap" name="nama_lengkap" type="text" tabindex="1" required autofocus>
     </fieldset>
     <fieldset>
-      <input placeholder="Tempat Lahir" type="text" tabindex="2" required>
+      <input placeholder="Tempat Lahir" name="tempat_lahir" type="text" tabindex="2" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Tanggal Lahir (dd-mm-yy)" type="text" tabindex="3" required>
+      <input placeholder="Tanggal Lahir" name="tanggal_lahir" type="date" tabindex="3" required>
     </fieldset>
     <p><label class="custom-select">
-      <select>
-        <option value="" selected>Agama</option>
+      <select name="agama">
+        <option value="0" selected>Agama</option>
         <option value="1">Islam</option>
         <option value="2">Kristen</option>
         <option value="3">Katholik</option>
@@ -32,24 +32,24 @@
       </select>
     </label></p>
     <fieldset>
-      <input placeholder="Pekerjaan" type="text" tabindex="5" required>
+      <input placeholder="Pekerjaan" name="pekerjaan" type="text" tabindex="5" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Alamat Rumah" type="text" tabindex="6" required>
+      <input placeholder="Alamat Rumah" name="alamat_rumah" type="text" tabindex="6" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Telepon/Fax" type="text" tabindex="7" required>
+      <input placeholder="Telepon/Fax" name="telepon_atau_fax" type="number" tabindex="7" required>
     </fieldset>
     <p><label class="custom-select">
-    <select>
-        <option value="" selected>Jenis Kelamin</option>
+    <select name="jenis_kelamin">
+        <option value="0" selected>Jenis Kelamin</option>
         <option value="1">Laki-Laki</option>
         <option value="2">Perempuan</option>
     </select>
     </label></p>
     <p><label class="custom-select">
-      <select>
-        <option value="" selected>Status Kawin</option>
+      <select name="status_kawin">
+        <option value="0" selected>Status Kawin</option>
         <option value="1">Belum Kawin</option>
         <option value="2">Kawin</option>
         <option value="3">Cerai Hidup</option>
@@ -57,14 +57,17 @@
       </select>
     </label></p>
      <fieldset>
-      <input placeholder="Nama Perusahaan" type="text" tabindex="10" required>
+      <input placeholder="Nama Perusahaan" name="nama_perusahaan" type="text" tabindex="10" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Alamat Perusahaan" type="text" tabindex="11" required>
+      <input placeholder="Alamat Perusahaan" name="alamat_perusahaan" type="text" tabindex="11" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Nomor Telefon Perusahaan" name="noTelp_perusahaan" type="number" tabindex="11" required>
     </fieldset>
     <p><label class="custom-select">
-    <select>
-        <option value="" selected>Jenis Permohonan</option>
+    <select name="jenis_permohonan">
+        <option value="0" selected>Jenis Permohonan</option>
         <option value="1">Baru</option>
         <option value="2">Perpanjangan</option>
         <option value="3">Perluasan</option>
@@ -74,20 +77,20 @@
     </select>
     </label></p>
     <fieldset>
-      <input placeholder="Lokasi Bangunan" type="text" tabindex="13" required>
+      <input placeholder="Lokasi Bangunan" name="lokasi_bangunan" type="text" tabindex="13" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Luas Bangunan" type="text" tabindex="14" required>
+      <input placeholder="Luas Bangunan" name="luas_bangunan" type="text" tabindex="14" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Fungsi Bangunan" type="text" tabindex="15" required>
+      <input placeholder="Fungsi Bangunan" name="fungsi_bangunan" type="text" tabindex="15" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Status Tanah" type="text" tabindex="16" required>
+      <input placeholder="Status Tanah" name="status_tanah" type="text" tabindex="16" required>
     </fieldset>
-    <!-- <fieldset>
+     <fieldset>
     <div class="g-recaptcha" data-sitekey="6LcTWiwUAAAAAAtpoHlBtGeFzUO-uURAdjBKxyIh"></div>
-    </fieldset> -->
+    </fieldset> 
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Simpan</button>
     </fieldset>

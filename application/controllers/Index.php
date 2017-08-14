@@ -1,7 +1,7 @@
 <?php
 if(!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Imb extends CI_Controller{
+class Index extends CI_Controller{
 
    public function __construct(){
         parent::__construct();
@@ -9,7 +9,7 @@ class Imb extends CI_Controller{
     }
 
     public function index(){
-        $this->load->view('imb');
+        $this->load->view('kelurahan');
     }
 
 }
