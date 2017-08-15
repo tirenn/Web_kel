@@ -33,8 +33,8 @@ class Index extends CI_Controller{
 				'status_kawin' => $this->M_status_kawin->getStatusKawin(),
 				'jenis_permohonan_ho' => $this->M_jenis_permohonan_ho->getJenisPermohonan(),
 				'jenis_permohonan_imb' => $this->M_jenis_permohonan_imb->getJenisPermohonan(),
-				'jenis_permohonan_kk' => $this->M_jenis_permohonan_kk->getJenisPermohonan()
-				
+				'jenis_permohonan_kk' => $this->M_jenis_permohonan_kk->getJenisPermohonan(),
+				'golongan_darah' => $this->M_golongan_darah->getGolonganDarah()
 				);
         $this->load->view('kelurahan', $data);
     }

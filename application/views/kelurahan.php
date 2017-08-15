@@ -77,7 +77,7 @@
 					<div class="panel panel-primary">
 						<div class="panel-heading">HO Recom</div>
 						<div class="panel-body">
-							<form>
+							<form action="<?php echo base_url();?>Ho_recom/insert" method="POST">
 								<div class="form-group">
 									<label for="">Nama Lengkap</label>
 									<input type="text" name="nama_lengkap" class="form-control" placeholder="Masukkan Nama Lengkap" required>
@@ -105,11 +105,11 @@
 								</div>
 								<div class="form-group">
 									<label for="">Alamat Rumah</label>
-									<input type="text" name="alamat_rumah" class="form-control" placeholder="Masukkan Alamat Rumah" required>
+									<textarea rows="2" name="alamat_rumah" class="form-control" placeholder="Masukkan Alamat Rumah" required></textarea>
 								</div>
 								<div class="form-group">
 									<label for="">Telefon/Fax</label>
-									<input type="text" name="telefon_atau_fax" class="form-control" placeholder="Masukkan Telefon/Fax" required>
+									<input type="number" name="telefon_atau_fax" class="form-control" placeholder="Masukkan Telefon/Fax" required>
 								</div>
 								<div class="form-group">
 									<label for="">Jenis Kelamin</label>
@@ -135,7 +135,7 @@
 								</div>
 								<div class="form-group">
 									<label for="">Alamat Perusahaan</label>
-									<input type="text" name="alamat_perusahaan" class="form-control" placeholder="Masukkan Alamat Perusahaan" required>
+									<textarea name="alamat_perusahaan" rows="2" class="form-control" placeholder="Masukkan Alamat Perusahaan" required></textarea>
 								</div>
 								<div class="form-group">
 									<label for="">Telefon Perusahaan</label>
@@ -151,16 +151,20 @@
 									</select>
 								</div>
 								<div class="form-group">
-									<label for="">Lokasi Bangunan</label>
-									<input type="text" name="lokasi_bangunan" class="form-control" placeholder="Masukkan Lokasi Bangunan" required>
+									<label for="">Jenis Usaha</label>
+									<input type="text" name="jenis_usaha" class="form-control" placeholder="Masukkan Lokasi Bangunan" required>
 								</div>
 								<div class="form-group">
-									<label for="">Luas Bangunan</label>
-									<input type="text" name="luas_bangunan" class="form-control" placeholder="Masukkan Luas Bangunan" required>
+									<label for="">Lokasi Usaha</label>
+									<input type="text" name="lokasi_usaha" class="form-control" placeholder="Masukkan Lokasi Bangunan" required>
 								</div>
 								<div class="form-group">
-									<label for="">Fungsi Bangunan</label>
-									<input type="text" name="fungsi_bangunan" class="form-control" placeholder="Masukkan Fungsi Bangunan" required>
+									<label for="">Luas Tanah (m<sup>2</sup>)</label>
+									<input type="number" name="luas_tanah" class="form-control" placeholder="Masukkan Luas Bangunan" required>
+								</div>
+								<div class="form-group">
+									<label for="">Luas Usaha (m<sup>2</sup>)</label>
+									<input type="number" name="luas_usaha" class="form-control" placeholder="Masukkan Luas Bangunan" required>
 								</div>
 								<div class="form-group">
 									<label for="">Status Tanah</label>
@@ -176,11 +180,10 @@
 
 				<!-- imb start -->
 				<div id="imb">
-					<h1>IMB</h1>
 					<div class="panel panel-primary">
 						<div class="panel-heading">IMB</div>
 						<div class="panel-body">
-							<form>
+							<form action="<?php echo base_url();?>Imb/insert" method="POST">
 								<div class="form-group">
 									<label for="">Nama Lengkap</label>
 									<input type="text" name="nama_lengkap" class="form-control" placeholder="Masukkan Nama Lengkap" required>
@@ -208,11 +211,11 @@
 								</div>
 								<div class="form-group">
 									<label for="">Alamat Rumah</label>
-									<input type="text" name="alamat_rumah" class="form-control" placeholder="Masukkan Alamat Rumah" required>
+									<textarea name="alamat_rumah" rows="2" class="form-control" placeholder="Masukkan Alamat Rumah" required></textarea>
 								</div>
 								<div class="form-group">
 									<label for="">Telefon/Fax</label>
-									<input type="text" name="telefon_atau_fax" class="form-control" placeholder="Masukkan Telefon/Fax" required>
+									<input type="number" name="telefon_atau_fax" class="form-control" placeholder="Masukkan Telefon/Fax" required>
 								</div>
 								<div class="form-group">
 									<label for="">Jenis Kelamin</label>
@@ -238,11 +241,7 @@
 								</div>
 								<div class="form-group">
 									<label for="">Alamat Perusahaan</label>
-									<input type="text" name="alamat_perusahaan" class="form-control" placeholder="Masukkan Alamat Perusahaan" required>
-								</div>
-								<div class="form-group">
-									<label for="">Telefon Perusahaan</label>
-									<input type="number" name="noTelp_perusahaan" class="form-control" placeholder="Masukkan Telefon Perusahaan" required>
+									<textarea rows="2" name="alamat_perusahaan" class="form-control" placeholder="Masukkan Alamat Perusahaan" required></textarea>
 								</div>
 								<div class="form-group">
 									<label for="">Jenis Permohonan</label>
@@ -258,8 +257,8 @@
 									<input type="text" name="lokasi_bangunan" class="form-control" placeholder="Masukkan Lokasi Bangunan" required>
 								</div>
 								<div class="form-group">
-									<label for="">Luas Bangunan</label>
-									<input type="text" name="luas_bangunan" class="form-control" placeholder="Masukkan Luas Bangunan" required>
+									<label for="">Luas Bangunan (m<sup>2</sup>)</label>
+									<input type="number" name="luas_bangunan" class="form-control" placeholder="Masukkan Luas Bangunan" required>
 								</div>
 								<div class="form-group">
 									<label for="">Fungsi Bangunan</label>
@@ -370,10 +369,10 @@
 					<div class="panel panel-primary">
 						<div class="panel-heading">Kartu Tanda Penduduk</div>
 						<div class="panel-body">
-							<form>
+							<form action="<?php echo base_url();?>Ktp/insert" method="POST">
 								<div class="form-group">
 									<label for="">NIK</label>
-									<input type="text" name="nik" class="form-control" placeholder="Masukkan NIK" required>
+									<input type="number" name="nik" class="form-control" placeholder="Masukkan NIK" required>
 								</div>
 								<div class="form-group">
 									<label for="">Nama Lengkap</label>
@@ -415,24 +414,33 @@
 									</select>
 								</div>
 								<div class="form-group">
+									<label for="">Golongan Darah</label>
+									<select class="form-control" name="golongan_darah" required>
+										<option value="0" selected>Pilih Golongan Darah</option>
+										<?php foreach($golongan_darah as $row){ ?>
+										<option value="<?php echo $row->id; ?>"><?php echo $row->golongan_darah ?></option>
+										<?php }?>
+									</select>
+								</div>
+								<div class="form-group">
 									<label for="">Pekerjaan</label>
 									<input type="text" name="pekerjaan" class="form-control" placeholder="Masukkan Pekerjaan" required>
 								</div>
 								<div class="form-group">
 									<label for="">Alamat</label>
-									<input type="text" name="alamat" class="form-control" placeholder="Masukkan Alamat Rumah" required>
+									<textarea rows="2" name="alamat" class="form-control" placeholder="Masukkan Alamat Rumah" required></textarea>
 								</div>
 								<div class="row">
 									<div class="col-xs-6">
 										<div class="form-group">
 											<label for="">RT</label>
-											<input type="text" name="rt" class="form-control" placeholder="Masukkan RT" required>
+											<input type="number" name="rt" class="form-control" placeholder="Masukkan RT" required>
 										</div>
 									</div>
 									<div class="col-xs-6">
 										<div class="form-group">
 											<label for="">RW</label>
-											<input type="text" name="rw" class="form-control" placeholder="Masukkan RW" required>
+											<input type="number" name="rw" class="form-control" placeholder="Masukkan RW" required>
 										</div>
 									</div>
 								</div>
