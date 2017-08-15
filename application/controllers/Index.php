@@ -6,16 +6,105 @@ class Index extends CI_Controller{
    public function __construct(){
         parent::__construct();
         // $this->load->helper('url');
+		$this->load->model('M_agama','',TRUE);
+		$this->load->model('M_jenis_kelamin','',TRUE);
+		$this->load->model('M_status_kawin','',TRUE);
+		$this->load->model('M_jenis_permohonan_kk','',TRUE);
+		$this->load->model('M_jenis_permohonan_imb','',TRUE);
+		$this->load->model('M_jenis_permohonan_ho','',TRUE);
+		$this->load->model('M_hubungan_keluarga','',TRUE);
+		$this->load->model('M_golongan_darah','',TRUE);
+		$this->load->model('M_pendidikan_terakhir','',TRUE);
+		$this->load->model('M_status_pendidikan','',TRUE);
+		$this->load->model('M_kelompok_pekerjaan','',TRUE);
+		$this->load->model('M_kelainan_khusus','',TRUE);
+		$this->load->model('M_akseptor_kb','',TRUE);
+		
+		
+		$this->load->helper('url');
+		$this->load->database();
+		$this->load->library('session');
     }
 
     public function index(){
-        $this->load->view('kelurahan');
+		$data = array(
+				'agama' => $this->M_agama->getAgama(),
+				'jenis_kelamin' => $this->M_jenis_kelamin->getJenisKelamin(),
+				'status_kawin' => $this->M_status_kawin->getStatusKawin(),
+				'jenis_permohonan_ho' => $this->M_jenis_permohonan_ho->getJenisPermohonan(),
+				'jenis_permohonan_imb' => $this->M_jenis_permohonan_imb->getJenisPermohonan(),
+				'jenis_permohonan_kk' => $this->M_jenis_permohonan_kk->getJenisPermohonan()
+				
+				);
+        $this->load->view('kelurahan', $data);
     }
 
     public function kk(){
-        // $jumlah = $this->input->post('jumlah_keluarga');
-$jumlah = 2;
-$select_box='';
+		$agama = $this->M_agama->getAgama();
+		$jenis_kelamin = $this->M_jenis_kelamin->getJenisKelamin(); 
+		$hubungan_keluarga = $this->M_hubungan_keluarga->getHubunganKeluarga(); 
+		$status_kawin = $this->M_status_kawin->getStatusKawin();
+		$golongan_darah = $this->M_golongan_darah->getGolonganDarah();
+		$pendidikan_terakhir = $this->M_pendidikan_terakhir->getPendidikanTerakhir();
+		$status_pendidikan = $this->M_status_pendidikan->getStatusPendidikan();
+		$kelompok_pekerjaan = $this->M_kelompok_pekerjaan->getKelompokPekerjaan();
+		$kelainan_khusus = $this->M_kelainan_khusus->getKelainanKhusus();
+		$akseptor_kb = $this->M_akseptor_kb->getAkseptorKb();
+		
+		
+		$select_agama = '';
+		foreach($agama as $row){
+			$select_agama .= '<option value="'.$row->id.'">'.$row->agama.'</option>';
+		}
+
+		$select_status_kawin = '';
+		foreach($status_kawin as $row){
+			$select_status_kawin .= '<option value="'.$row->id.'">'.$row->status_kawin.'</option>';
+		}
+
+		$select_jenis_kelamin = '';
+		foreach($jenis_kelamin as $row){
+			$select_jenis_kelamin .= '<option value="'.$row->id.'">'.$row->jenis_kelamin.'</option>';
+		}
+
+		$select_hubungan_keluarga = '';
+		foreach($hubungan_keluarga as $row){
+			$select_hubungan_keluarga .= '<option value="'.$row->id.'">'.$row->hubungan_keluarga.'</option>';
+		}
+
+		$select_golongan_darah = '';
+		foreach($golongan_darah as $row){
+			$select_golongan_darah .= '<option value="'.$row->id.'">'.$row->golongan_darah.'</option>';
+		}
+
+		$select_pendidikan_terakhir = '';
+		foreach($pendidikan_terakhir as $row){
+			$select_pendidikan_terakhir .= '<option value="'.$row->id.'">'.$row->pendidikan_terakhir.'</option>';
+		}
+
+		$select_status_pendidikan = '';
+		foreach($status_pendidikan as $row){
+			$select_status_pendidikan .= '<option value="'.$row->id.'">'.$row->status_pendidikan.'</option>';
+		}
+
+		$select_kelompok_pekerjaan = '';
+		foreach($kelompok_pekerjaan as $row){
+			$select_kelompok_pekerjaan .= '<option value="'.$row->id.'">'.$row->kelompok_pekerjaan.'</option>';
+		}
+
+		$select_kelainan_khusus = '';
+		foreach($kelainan_khusus as $row){
+			$select_kelainan_khusus .= '<option value="'.$row->id.'">'.$row->kelainan_khusus.'</option>';
+		}
+
+		$select_akseptor_kb = '';
+		foreach($akseptor_kb as $row){
+			$select_akseptor_kb .= '<option value="'.$row->id.'">'.$row->akseptor_kb.'</option>';
+		}
+
+        $jumlah = $this->input->post('jumlah_keluarga');
+		// $jumlah = 2;
+		$select_box='';
         for ($i = 1; $i <= $jumlah; $i++) {
 				$select_box .= '<div class="panel panel-default">'.
 							'<div class="panel-heading">Detail Kartu Keluarga ke-'.$i.'</div>'.
@@ -29,25 +118,14 @@ $select_box='';
 									'<label for="">Jenis Kelamin</label>'.
 									'<select class="form-control" name="jenis_kelamin['.$i.']" required>'.
 										'<option value="0" selected>Pilih Jenis Kelamin</option>'.
-										'<option value="1">Laki-Laki</option>'.
-										'<option value="2">Perempuan</option>'.
+										$select_jenis_kelamin.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Hubungan Keluarga</label>'.
 									'<select class="form-control" name="hubungan_keluarga['.$i.']">'.
 										'<option value="" selected>Pilih Hubungan Keluarga</option>'.
-										'<option value="1">Kepala Keluarga</option>'.
-										'<option value="2">Suami</option>'.
-										'<option value="3">Istri</option>'.
-										'<option value="4">Anak</option>'.
-										'<option value="5">Menantu</option>'.
-										'<option value="6">Cucu</option>'.
-										'<option value="7">Orang Tua</option>'.
-										'<option value="8">Mertua</option>'.
-										'<option value="9">Famili Lain</option>'.
-										'<option value="10">Pembantu</option>'.
-										'<option value="11">Lainnya</option>'.
+										$select_hubungan_keluarga.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
@@ -78,10 +156,7 @@ $select_box='';
 									'<label for="">Status Kawin</label>'.
 									'<select class="form-control" name="status_kawin['.$i.']" required>'.
 										'<option value="0" selected>Pilih Status Kawin</option>'.
-										'<option value="1">Belum Kawin</option>'.
-										'<option value="2">Kawin</option>'.
-										'<option value="3">Cerai Hidup</option>'.
-										'<option value="4">Cerai Mati</option>'.
+										$select_status_kawin.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
@@ -92,63 +167,35 @@ $select_box='';
 									'<label for="">Agama</label>'.
 									'<select class="form-control" name="agama['.$i.']" required>'.
 										'<option value="0" selected>Pilih Agama</option>'.
-										'<option value="1">Islam</option>'.
-										'<option value="2">Kristen</option>'.
-										'<option value="3">Katholik</option>'.
-										'<option value="4">Hindu</option>'.
-										'<option value="5">Budha</option>'.
-										'<option value="6">Konghucu</option>'.
+										$select_agama.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Pilih Golongan Darah</label>'.
 									'<select class="form-control" name="golongan_darah['.$i.']">'.
-										'<option value="" selected>Golongan Darah</option>'.
-										'<option value="1">A</option>'.
-										'<option value="2">AB</option>'.
-										'<option value="3">B</option>'.
-										'<option value="4">O</option>'.
+										'<option value="0" selected>Golongan Darah</option>'.
+										$select_golongan_darah.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Pendidikan Terakhir</label>'.
 									'<select class="form-control" name="pendidikan_terakhir['.$i.']">'.
-										'<option value="" selected>Pilih Pendidikan Terakhir</option>'.
-										'<option value="1">Tidak/Belum Sekolah</option>'.
-										'<option value="2">Tidak Tamat SD</option>'.
-										'<option value="3">SD/Sederajat</option>'.
-										'<option value="4">SLTP/Sederajat</option>'.
-										'<option value="5">SLTA/Sederajat</option>'.
-										'<option value="6">Diploma I/II</option>'.
-										'<option value="7">Akademi/Dipl. III/S. Muda</option>'.
-										'<option value="8">Dipl. IV/Strata I</option>'.
-										'<option value="9">Strata II</option>'.
-										'<option value="10">Strata III</option>'.
+										'<option value="0" selected>Pilih Pendidikan Terakhir</option>'.
+										$select_pendidikan_terakhir.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Status Pendidikan</label>'.
 									'<select class="form-control" name="status_pendidikan['.$i.']">'.
-										'<option value="" selected>Pilih Status Pendidikan</option>'.
-										'<option value="1">Tidak Tamat</option>'.
-										'<option value="2">Tamat</option>'.
-										'<option value="3">Belum Tamat</option>'.
-										'<option value="4">Tidak Sekolah</option>'.
-										'<option value="5">Belum Sekolah</option>'.
+										'<option value="0" selected>Pilih Status Pendidikan</option>'.
+										$select_status_pendidikan.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Kelompok Pekerjaan</label>'.
 									'<select class="form-control" name="kelompok_pekerjaan['.$i.']">'.
-										'<option value="" selected>Pilih Kelompok Pekerjaan</option>'.
-										'<option value="1">Swasta</option>'.
-										'<option value="2">Wiraswasta</option>'.
-										'<option value="3">Pegawa Negeri Sipil</option>'.
-										'<option value="4">Pedagang</option>'.
-										'<option value="5">Petani</option>'.
-										'<option value="6">Nelayan</option>'.
-										'<option value="7">Atlet</option>'.
-										'<option value="8">Lain-Lain</option>'.
+										'<option value="0" selected>Pilih Kelompok Pekerjaan</option>'.
+										$select_kelompok_pekerjaan.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
@@ -162,29 +209,15 @@ $select_box='';
 								'<div class="form-group">'.
 									'<label for="">Kelainan Khusus</label>'.
 									'<select class="form-control" name="kelainan_khusus['.$i.']">'.
-										'<option value="" selected>Pilih Kelainan Khusus</option>'.
-										'<option value="1">Tidak Ada</option>'.
-										'<option value="2">Tunawicara</option>'.
-										'<option value="3">Tunarungu</option>'.
-										'<option value="1">Tunanetra</option>'.
-										'<option value="4">Tunarungu/Tunanetra</option>'.
-										'<option value="4">Lainnya</option>'.
+										'<option value="0" selected>Pilih Kelainan Khusus</option>'.										
+										$select_kelainan_khusus.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Akseptor KB</label>'.
 									'<select class="form-control" name="akseptor_kb['.$i.']">'.
-										'<option value="" selected>Pilih Akseptor KB</option>'.
-										'<option value="1">Tidak Ada</option>'.
-										'<option value="2">IUD</option>'.
-										'<option value="3">Kondom</option>'.
-										'<option value="4">PIL</option>'.
-										'<option value="1">Suntik</option>'.
-										'<option value="2">Susuk</option>'.
-										'<option value="3">Vasektomi</option>'.
-										'<option value="4">Tubektomi</option>'.
-										'<option value="3">Tissu</option>'.
-										'<option value="4">Lainnya</option>'.
+										'<option value="0" selected>Pilih Akseptor KB</option>'.
+										$select_akseptor_kb.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
