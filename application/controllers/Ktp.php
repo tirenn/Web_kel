@@ -16,37 +16,57 @@ class Ktp extends CI_Controller{
     }
 
     function insert(){
-        date_default_timezone_set("Asia/Bangkok");
-        $date = date('Y-m-d H:i:s', time());
-        $no = $_SESSION['regktp'];
-        $nom = str_pad($no,3,0,STR_PAD_LEFT);
-        $noreg = "REG-".date('m')."".date('d')."-IMB-".$nom;
-        $_SESSION['regktp'] = $no+1;
-        
-        $data = array(
-            'id' => $this->uuid->v4(),            
-            'nik' => strtoupper($_POST['nik']),
-            'nama_lengkap' => strtoupper($_POST['nama_lengkap']),
-            'tempat_lahir' => strtoupper($_POST['tempat_lahir']),
-            'tanggal_lahir' => $_POST['tanggal_lahir'],
-            'table_agama_id' => $_POST['agama'],
-            'table_jenis_kelamin_id' => $_POST['jenis_kelamin'],
-            'table_status_kawin_id' => $_POST['status_kawin'],
-            'table_status_berkas_id' => 1,
-            'table_golongan_darah_id' => $_POST['golongan_darah'],
-            'pekerjaan' => strtoupper($_POST['pekerjaan']),
-            'alamat' => strtoupper('RT/'.$_POST['rt'].' RW/'.$_POST['rw'].' '.$_POST['alamat']),
-            'nomor_registrasi' => $noreg,
-            'create_on' => $date
-        );
 
-        $insert = $this->M_ktp->insert($data);
-        if(true==$insert){
-            echo"benar";
-        }else{
-            $result="Gagal Menyimpan Data";
-            echo $result;
+        $secret_key = '6Lc9FC0UAAAAAMSZhyik9GfpH5dUK5JmxUYvtkrO';
+        if(isset($_POST['g-recaptcha-response']))
+        {
+            $api_url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . $secret_key . '&response='.$_POST['g-recaptcha-response'];
+            $response = @file_get_contents($api_url);
+            $data = json_decode($response, true);
+ 
+            if($data['success']){
+                
+                date_default_timezone_set("Asia/Bangkok");
+                $date = date('Y-m-d H:i:s', time());
+                $no = $_SESSION['regktp'];
+                $nom = str_pad($no,3,0,STR_PAD_LEFT);
+                $noreg = "REG-".date('m')."".date('d')."-IMB-".$nom;
+                $_SESSION['regktp'] = $no+1;
+                
+                $data = array(
+                    'id' => $this->uuid->v4(),            
+                    'nik' => strtoupper($_POST['nik']),
+                    'nama_lengkap' => strtoupper($_POST['nama_lengkap']),
+                    'tempat_lahir' => strtoupper($_POST['tempat_lahir']),
+                    'tanggal_lahir' => $_POST['tanggal_lahir'],
+                    'table_agama_id' => $_POST['agama'],
+                    'table_jenis_kelamin_id' => $_POST['jenis_kelamin'],
+                    'table_status_kawin_id' => $_POST['status_kawin'],
+                    'table_status_berkas_id' => 1,
+                    'table_golongan_darah_id' => $_POST['golongan_darah'],
+                    'pekerjaan' => strtoupper($_POST['pekerjaan']),
+                    'alamat' => strtoupper('RT/'.$_POST['rt'].' RW/'.$_POST['rw'].' '.$_POST['alamat']),
+                    'nomor_registrasi' => $noreg,
+                    'create_on' => $date
+                );
+
+                $insert = $this->M_ktp->insert($data);
+                if(true==$insert){
+                    echo"benar";
+                }else{
+                    $result="Gagal Menyimpan Data";
+                    echo $result;
+                }
+
+
+            }//end succes
+            else{
+                // $success = false;
+                echo 'salah';
+            }
         }
+
+
 
         // echo json_encode($data);
         // echo $noreg;

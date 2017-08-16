@@ -17,6 +17,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 	crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/style.css">
 
@@ -170,6 +171,9 @@
 									<label for="">Status Tanah</label>
 									<input type="text" name="status_tanah" class="form-control" placeholder="Masukkan Status Tanah" required>
 								</div>
+								<!-- recaptcha -->
+								<div class="g-recaptcha" data-sitekey="6Lc9FC0UAAAAAPuoZ3GdQhUtBM4xBNCJ3txJuROu"></div>
+								<!-- end -->
 								<div class="text-right">
 									<button type="submit" class="btn btn-primary">Submit</button>
 								</div>
@@ -284,6 +288,9 @@
 									<label for="">Batas Barat</label>
 									<input type="text" name="batas_barat" class="form-control" placeholder="Masukkan Batas Barat" required>
 								</div>
+								<!-- recaptcha -->
+								<div class="g-recaptcha" data-sitekey="6Lc9FC0UAAAAAPuoZ3GdQhUtBM4xBNCJ3txJuROu"></div>
+								<!-- end -->
 								<div class="text-right">
 									<button type="submit" class="btn btn-primary">Submit</button>
 								</div>
@@ -354,6 +361,9 @@
 								</div>
 
 								<br>
+								<!-- recaptcha -->
+								<div class="g-recaptcha" data-sitekey="6Lc9FC0UAAAAAPuoZ3GdQhUtBM4xBNCJ3txJuROu"></div>
+								<!-- end -->
 								<div class="text-right">
 									<button type="submit" class="btn btn-primary">Submit</button>
 								</div>
@@ -444,6 +454,9 @@
 										</div>
 									</div>
 								</div>
+								<!-- recaptcha -->
+								<div class="g-recaptcha" data-sitekey="6Lc9FC0UAAAAAPuoZ3GdQhUtBM4xBNCJ3txJuROu"></div>
+								<!-- end -->
 								<div class="text-right">
 									<button type="submit" class="btn btn-primary">Submit</button>
 								</div>
