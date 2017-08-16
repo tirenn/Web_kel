@@ -299,14 +299,14 @@
 						<div class="panel-heading">Kartu Keluarga</div>
 						
 						<div class="panel-body">
-							<form>
+							<form action="<?php echo base_url();?>Kk/insert" method="POST">
 								<div class="panel panel-default">
 									<div class="panel-heading">Header Kartu Keluarga</div>
 									<div class="panel-body">
 											<div class="form-group">
 												<label for="">Jenis Permohonan</label>
-												<select class="form-control" name="jenis permohonan">
-													<option value="" selected>Pilih Jenis Permohonan</option>
+												<select class="form-control" name="jenis_permohonan">
+													<option value="0" selected>Pilih Jenis Permohonan</option>
 													<?php foreach($jenis_permohonan_kk as $row){ ?>
 													<option value="<?php echo $row->id; ?>"><?php echo $row->jenis_permohonan; ?></option>
 													<?php } ?>
@@ -314,11 +314,11 @@
 											</div>
 											<div class="form-group">
 												<label for="">Nama Lengkap</label>
-												<input type="text" name="nama_lengkap" class="form-control" placeholder="Masukkan Nama Lengkap" required>
+												<input type="text" name="nama_lengkap_header" class="form-control" placeholder="Masukkan Nama Lengkap" required>
 											</div>
 											<div class="form-group">
 												<label for="">Alamat</label>
-												<input type="textarea" name="Alamat" class="form-control" placeholder="Masukkan Alamat" required>
+												<textarea rows="2" name="alamat" class="form-control" placeholder="Masukkan Alamat" required></textarea>
 											</div>
 											<div class="row">
 												<div class="col-xs-6">

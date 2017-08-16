@@ -112,137 +112,137 @@ class Index extends CI_Controller{
 							
 								'<div class="form-group">'.
 									'<label for="">Nama Lengkap</label>'.
-									'<input type="text" name="nama_lengkap['.$i.']" class="form-control" placeholder="Masukkan Nama Lengkap" required>'.
+									'<input type="text" name="nama_lengkap'.$i.'" class="form-control" placeholder="Masukkan Nama Lengkap" required>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Jenis Kelamin</label>'.
-									'<select class="form-control" name="jenis_kelamin['.$i.']" required>'.
+									'<select class="form-control" name="jenis_kelamin'.$i.'" required>'.
 										'<option value="0" selected>Pilih Jenis Kelamin</option>'.
 										$select_jenis_kelamin.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Hubungan Keluarga</label>'.
-									'<select class="form-control" name="hubungan_keluarga['.$i.']">'.
+									'<select class="form-control" name="hubungan_keluarga'.$i.'">'.
 										'<option value="" selected>Pilih Hubungan Keluarga</option>'.
 										$select_hubungan_keluarga.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Anak ke-</label>'.
-									'<input type="number" name="anak_ke['.$i.']" class="form-control" placeholder="Masukkan Anak ke-" required>'.
+									'<input type="number" name="anak_ke'.$i.'" class="form-control" placeholder="Masukkan Anak ke-" required>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Nomor Akta Pengangkatan Anak</label>'.
-									'<input type="number" name="nomor_akta['.$i.']" class="form-control" placeholder="Masukkan Nomor Akta Pengangkatan Anak" required>'.
+									'<input type="number" name="nomor_akta'.$i.'" class="form-control" placeholder="Masukkan Nomor Akta Pengangkatan Anak" required>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Tempat Lahir</label>'.
-									'<input type="text" name="tempat_lahir['.$i.']" class="form-control" placeholder="Masukkan Tempat Lahir" required>'.
+									'<input type="text" name="tempat_lahir'.$i.'" class="form-control" placeholder="Masukkan Tempat Lahir" required>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Tanggal Lahir</label>'.
-									'<input type="date" name="tanggal_lahir['.$i.']" class="form-control" required>'.
+									'<input type="date" name="tanggal_lahir'.$i.'" class="form-control" required>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">NIK</label>'.
-									'<input type="text" name="nik['.$i.']" class="form-control" placeholder="Masukkan NIK" required>'.
+									'<input type="text" name="nik'.$i.'" class="form-control" placeholder="Masukkan NIK" required>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Nomor/Akta Tanggal Kelahiran</label>'.
-									'<input type="text" name="nomor_kelahiran['.$i.']" class="form-control" placeholder="Masukkan Nomor/Akta Tanggal Kelahiran" required>'.
+									'<input type="text" name="nomor_kelahiran'.$i.'" class="form-control" placeholder="Masukkan Nomor/Akta Tanggal Kelahiran" required>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Status Kawin</label>'.
-									'<select class="form-control" name="status_kawin['.$i.']" required>'.
+									'<select class="form-control" name="status_kawin'.$i.'" required>'.
 										'<option value="0" selected>Pilih Status Kawin</option>'.
 										$select_status_kawin.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Nomor/Akta Tanggal Kawin/Cerai</label>'.
-									'<input type="text" name="nomor_kelahiran['.$i.']" class="form-control" placeholder="Masukkan Nomor/Akta Tanggal Kelahiran" required>'.
+									'<input type="text" name="nomor_kawin'.$i.'" class="form-control" placeholder="Masukkan Nomor/Akta Tanggal Kelahiran" required>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Agama</label>'.
-									'<select class="form-control" name="agama['.$i.']" required>'.
+									'<select class="form-control" name="agama'.$i.'" required>'.
 										'<option value="0" selected>Pilih Agama</option>'.
 										$select_agama.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Pilih Golongan Darah</label>'.
-									'<select class="form-control" name="golongan_darah['.$i.']">'.
+									'<select class="form-control" name="golongan_darah'.$i.'">'.
 										'<option value="0" selected>Golongan Darah</option>'.
 										$select_golongan_darah.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Pendidikan Terakhir</label>'.
-									'<select class="form-control" name="pendidikan_terakhir['.$i.']">'.
+									'<select class="form-control" name="pendidikan_terakhir'.$i.'">'.
 										'<option value="0" selected>Pilih Pendidikan Terakhir</option>'.
 										$select_pendidikan_terakhir.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Status Pendidikan</label>'.
-									'<select class="form-control" name="status_pendidikan['.$i.']">'.
+									'<select class="form-control" name="status_pendidikan'.$i.'">'.
 										'<option value="0" selected>Pilih Status Pendidikan</option>'.
 										$select_status_pendidikan.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Kelompok Pekerjaan</label>'.
-									'<select class="form-control" name="kelompok_pekerjaan['.$i.']">'.
+									'<select class="form-control" name="kelompok_pekerjaan'.$i.'">'.
 										'<option value="0" selected>Pilih Kelompok Pekerjaan</option>'.
 										$select_kelompok_pekerjaan.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Tempat Tinggal Terakhir</label>'.
-									'<input type="text" name="tempat_tinggal_terakhir['.$i.']" class="form-control" placeholder="Masukkan Tempat Tinggal Terakhir" required>'.
+									'<input type="text" name="tempat_tinggal_terakhir'.$i.'" class="form-control" placeholder="Masukkan Tempat Tinggal Terakhir" required>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Nomor dan Tanggal Surat Pindah</label>'.
-									'<input type="text" name="nomor_tgl_pindah['.$i.']" class="form-control" placeholder="Masukkan Nomor dan Tanggal Surat Pindah" required>'.
+									'<input type="text" name="nomor_tgl_pindah'.$i.'" class="form-control" placeholder="Masukkan Nomor dan Tanggal Surat Pindah" required>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Kelainan Khusus</label>'.
-									'<select class="form-control" name="kelainan_khusus['.$i.']">'.
+									'<select class="form-control" name="kelainan_khusus'.$i.'">'.
 										'<option value="0" selected>Pilih Kelainan Khusus</option>'.										
 										$select_kelainan_khusus.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Akseptor KB</label>'.
-									'<select class="form-control" name="akseptor_kb['.$i.']">'.
+									'<select class="form-control" name="akseptor_kb'.$i.'">'.
 										'<option value="0" selected>Pilih Akseptor KB</option>'.
 										$select_akseptor_kb.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Nama Ibu</label>'.
-									'<input type="text" name="nama_ibu['.$i.']" class="form-control" placeholder="Masukkan Nama Ibu" required>'.
+									'<input type="text" name="nama_ibu'.$i.'" class="form-control" placeholder="Masukkan Nama Ibu" required>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">NIK Ibu</label>'.
-									'<input type="text" name="nik_ibu['.$i.']" class="form-control" placeholder="Masukkan NIK Ibu" required>'.
+									'<input type="text" name="nik_ibu'.$i.'" class="form-control" placeholder="Masukkan NIK Ibu" required>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Nama Ayah</label>'.
-									'<input type="text" name="nama_ayah['.$i.']" class="form-control" placeholder="Masukkan Nama Ayah" required>'.
+									'<input type="text" name="nama_ayah'.$i.'" class="form-control" placeholder="Masukkan Nama Ayah" required>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">NIK Ayah</label>'.
-									'<input type="text" name="nik_ayah['.$i.']" class="form-control" placeholder="Masukkan NIK Ayah" required>'.
+									'<input type="text" name="nik_ayah'.$i.'" class="form-control" placeholder="Masukkan NIK Ayah" required>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Tempat Tinggal Terakhir</label>'.
-									'<input type="text" name="tmp_tgl_terakhir['.$i.']" class="form-control" placeholder="Masukkan Tempat Tinggal Terakhir" required>'.
+									'<input type="text" name="tmp_tgl_terakhir'.$i.'" class="form-control" placeholder="Masukkan Tempat Tinggal Terakhir" required>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Keterangan (Catatan Lain)</label>'.
-									'<input type="text" name="note['.$i.']" class="form-control" placeholder="Masukkan Keterangan (Catatan Lain)" required>'.
+									'<input type="text" name="note'.$i.'" class="form-control" placeholder="Masukkan Keterangan (Catatan Lain)" required>'.
 								'</div>'.
 							
 							'</div>'.
