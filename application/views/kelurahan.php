@@ -12,6 +12,9 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
 	crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/style.css">
+	
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
@@ -19,7 +22,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/style.css">
 
 </head>
 
@@ -29,31 +31,43 @@
 			<div class="row">
 				<div class="col-xs-6">
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
+					<!-- <div class="navbar-header">
 						<a class="navbar-brand" href="#">Brand</a>
-					</div>		
+					</div>		 -->
+					<ul class="nav navbar-nav" style="float:left;">
+						<li><a id="status" href=""><img id="logo" src="http://ngalam.co/wp-content/uploads/2017/05/aplikasi-singo.png" alt=""> Landungsari</a></li>
+					</ul>
 				</div>
 				<div class="col-xs-6">
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<ul class="nav navbar-nav" style="float:right;">
-						<li><a href="<?php echo base_url();?>Login">Login</a></li>
-					</ul>		
+						<li><a id="status" href="<?php echo base_url();?>Login">Cek Status</a></li>
+					</ul>	
 				</div>
 			</div>
 			
 		</div>
 		<!-- /.container-fluid -->
 	</nav>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+	<div id="myCarousel" class="carousel slide" data-ride="carousel" style="padding-top: 45px;">
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+			<div class="item active">
+				<img id="bg" src="http://www.shoma.net/images/slider/background-maps-2.jpg" alt="Chania">
+				<div class="carousel-caption">
+					<div id="tittle">Sistem Pelayanan Publik</div>
+					<div id="tittle2">Kelurahan Landungsari</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
 
 	<div class="container">
 		<div class="row">
 
-			<div class="col-sm-8 col-xs-12">
+			<div class="col-xs-12">
 			<div class="panel-group">
 			
 				<div class="panel panel-primary">
@@ -69,6 +83,7 @@
 								<option value="4">Kartu Tanda Penduduk</option>
 							</select>
 						</div>	
+						
 					</div>
 				</div>
 				
@@ -94,7 +109,7 @@
 								<div class="form-group">
 									<label for="">Agama</label>
 									<select class="form-control" name="agama" required>
-										<option value="0" selected>Pilih Agama</option>
+										<option value="" selected>Pilih Agama</option>
 										<?php foreach($agama as $row){ ?>
 										<option value="<?php echo $row->id; ?>"><?php echo $row->agama; ?></option>
 										<?php } ?>
@@ -115,7 +130,7 @@
 								<div class="form-group">
 									<label for="">Jenis Kelamin</label>
 									<select class="form-control" name="jenis_kelamin" required>
-										<option value="0" selected>Pilih Jenis Kelamin</option>
+										<option value="" selected>Pilih Jenis Kelamin</option>
 										<?php foreach($jenis_kelamin as $row){ ?>
 										<option value="<?php echo $row->id; ?>"><?php echo $row->jenis_kelamin; ?></option>
 										<?php } ?>
@@ -124,7 +139,7 @@
 								<div class="form-group">
 									<label for="">Status Kawin</label>
 									<select class="form-control" name="status_kawin" required>
-										<option value="0" selected>Pilih Status Kawin</option>
+										<option value="" selected>Pilih Status Kawin</option>
 										<?php foreach($status_kawin as $row){ ?>
 										<option value="<?php echo $row->id; ?>"><?php echo $row->status_kawin; ?></option>
 										<?php } ?>
@@ -144,8 +159,8 @@
 								</div>
 								<div class="form-group">
 									<label for="">Jenis Permohonan</label>
-									<select class="form-control" name="jenis_permohonan">
-										<option value="0" selected>Pilih Jenis Permohonan</option>
+									<select class="form-control" name="jenis_permohonan" required>
+										<option value="" selected>Pilih Jenis Permohonan</option>
 										<?php foreach($jenis_permohonan_ho as $row){ ?>
 										<option value="<?php echo $row->id; ?>"><?php echo $row->jenis_permohonan; ?></option>
 										<?php } ?>
@@ -203,7 +218,7 @@
 								<div class="form-group">
 									<label for="">Agama</label>
 									<select class="form-control" name="agama" required>
-										<option value="0" selected>Pilih Agama</option>
+										<option value="" selected>Pilih Agama</option>
 										<?php foreach($agama as $row){ ?>
 										<option value="<?php echo $row->id; ?>"><?php echo $row->agama; ?></option>
 										<?php } ?>
@@ -224,7 +239,7 @@
 								<div class="form-group">
 									<label for="">Jenis Kelamin</label>
 									<select class="form-control" name="jenis_kelamin" required>
-										<option value="0" selected>Pilih Jenis Kelamin</option>
+										<option value="" selected>Pilih Jenis Kelamin</option>
 										<?php foreach($jenis_kelamin as $row){ ?>
 										<option value="<?php echo $row->id; ?>"><?php echo $row->jenis_kelamin; ?></option>
 										<?php } ?>
@@ -233,7 +248,7 @@
 								<div class="form-group">
 									<label for="">Status Kawin</label>
 									<select class="form-control" name="status_kawin" required>
-										<option value="0" selected>Pilih Status Kawin</option>
+										<option value="" selected>Pilih Status Kawin</option>
 										<?php foreach($status_kawin as $row){ ?>
 										<option value="<?php echo $row->id; ?>"><?php echo $row->status_kawin; ?></option>
 										<?php } ?>
@@ -249,8 +264,8 @@
 								</div>
 								<div class="form-group">
 									<label for="">Jenis Permohonan</label>
-									<select class="form-control" name="jenis_permohonan">
-										<option value="0" selected>Pilih Jenis Permohonan</option>
+									<select class="form-control" name="jenis_permohonan" required>
+										<option value="" selected>Pilih Jenis Permohonan</option>
 										<?php foreach($jenis_permohonan_imb as $row){ ?>
 										<option value="<?php echo $row->id; ?>"><?php echo $row->jenis_permohonan; ?></option>
 										<?php } ?>
@@ -312,8 +327,8 @@
 									<div class="panel-body">
 											<div class="form-group">
 												<label for="">Jenis Permohonan</label>
-												<select class="form-control" name="jenis_permohonan">
-													<option value="0" selected>Pilih Jenis Permohonan</option>
+												<select class="form-control" name="jenis_permohonan" required>
+													<option value="" selected>Pilih Jenis Permohonan</option>
 													<?php foreach($jenis_permohonan_kk as $row){ ?>
 													<option value="<?php echo $row->id; ?>"><?php echo $row->jenis_permohonan; ?></option>
 													<?php } ?>
@@ -349,7 +364,7 @@
 											</div>
 											<div class="form-group">
 												<label for="">Jumlah Anggota Keluarga</label>
-												<input type="number" id="jumlah_keluarga" name="jumlah_anggota_keluarga" class="form-control" placeholder="Masukkan Jumlah Anggota Keluarga" required>
+												<input type="number" min="0" id="jumlah_keluarga" name="jumlah_anggota_keluarga" class="form-control" placeholder="Masukkan Jumlah Anggota Keluarga" required>
 											</div>
 									</div>
 								</div>
@@ -364,7 +379,7 @@
 								<!-- recaptcha -->
 								<div class="g-recaptcha" data-sitekey="6Lc9FC0UAAAAAPuoZ3GdQhUtBM4xBNCJ3txJuROu"></div>
 								<!-- end -->
-								<div class="text-right">
+								<div class="text-right" id="submit">
 									<button type="submit" class="btn btn-primary">Submit</button>
 								</div>
 							</form>
@@ -382,7 +397,7 @@
 							<form action="<?php echo base_url();?>Ktp/insert" method="POST">
 								<div class="form-group">
 									<label for="">NIK</label>
-									<input type="number" name="nik" class="form-control" placeholder="Masukkan NIK" required>
+									<input type="text" pattern="[0-9]" name="nik" class="form-control" placeholder="Masukkan NIK" required>
 								</div>
 								<div class="form-group">
 									<label for="">Nama Lengkap</label>
@@ -470,48 +485,22 @@
 			</div>
 			</div>
 
-			<!-- status regis -->
-			<div class="col-sm-4 col-xs-12">
-				<!-- start status regis -->
-				<div class="panel-group">
-					<div class="panel panel-primary">
-						<div class="panel-heading">Cek Status Registrasi</div>
-						<div class="panel-body">
-						<!-- start status -->
-							<div id="status">
-								<form>
-									<div class="form-group">
-										<label for="">Jenis Pelayanan</label>
-										<select class="form-control" name="jenis_pelayanan">
-											<option value="0" selected>Pilih Jenis Pelayanan</option>
-											<option value="1">Pengajuan KTP</option>
-											<option value="2">Pengajuan KK</option>
-											<option value="3">Pengajuan IMB</option>
-											<option value="3">Pengajuan Izin (HO)</option>
-										</select>
-									</div>
-									<div class="form-group">
-										<label for="">Nomor Registrasi</label>
-										<input type="text" name="nomor_registrasi" class="form-control" placeholder="Masukkan Nomor Registrasi" required>
-									</div>
-									<div class="text-right">
-										<button type="submit" class="btn btn-primary">Submit</button>
-									</div>
-								</form>
-							</div>
-							<!-- end status		 -->
-						</div>
-					</div>
-				</div>
-				
-
-			</div>
 
 		</div>
 		<!-- end row -->
 	</div>
 	<!-- end container -->
+
+
+	<nav class="navbar navbar-fixed-bottom navbar-default">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav" style="float:left;">
+				<li><a id="status" href="">Pemdes Landungsari</a></li>
+			</ul>
+		</div>
+	</nav>
 </body>
+
 
 </html>
 <script>
@@ -520,6 +509,8 @@
 	$("#imb").hide();
 	$("#kk").hide();
 	$("#ktp").hide();
+	$("#submit").hide();			
+	
 
 	$("#jenis_pelayanan").on('change', function () {
 		id_pelayanan = $(this).val();
@@ -551,10 +542,17 @@
 		}
 	});
 
+	
+
 	var jumlah_keluarga;
 	$("#jumlah_keluarga").on('change', function () {
 		jumlah_keluarga = $(this).val();
 		console.log(jumlah_keluarga);
+		if(jumlah_keluarga==0 || jumlah_keluarga==null){
+			$("#submit").hide();			
+		}else{
+			$("#submit").show();			
+			
 		$.ajax({
 			url : "<?php echo base_url()?>Index/kk",
 			type : 'POST',
@@ -567,7 +565,41 @@
 				alert('terjadi error');
 			}
 		});
+		}
 
 	});
+
+	// var jenis_pelayanan;
+	// var nomor_reg;
+	// var result='';
+	// $('#submit').click(function (){
+	// 	jenis_pelayanan = $('#jenis_layanan option:selected').val();
+	// 	nomor_reg = $('#nomor_registrasi').val();
+	// 	console.log(nomor_reg);
+		
+	// 	console.log(jenis_pelayanan);
+	// 	// alert('sdadsad');
+	// 	// $('#no_reg').html(nomor_reg);
+	// 	$.ajax({
+	// 		url : "<?php echo base_url();?>Status_regis/search",
+	// 		type : 'POST',
+	// 		data :  {'jenis_pelayanan' : jenis_pelayanan, 'nomor_registrasi': nomor_registrasi},
+	// 		dataType: 'json',
+	// 		success : function(data){
+	// 			// $('#no_reg').html(nomer_reg);
+	// 			// result = data;
+	// 			// if(result != null){
+	// 			// 	$('#result').html(result);				
+	// 			// }else{
+	// 			// 	$('#result').html('Nomor Registrasi Tidak Ditemukan');									
+	// 			// }
+	// 			alert('dasdadas');
+	// 		},
+	// 		error: function(){
+	// 			alert('terjadi error');
+	// 		}
+	// 	});
+
+	// });
 
 </script>

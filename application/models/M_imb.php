@@ -21,7 +21,13 @@
             }
 		}
 
-		
+		function getStatus($nomor_registrasi){
+			$query = $this->db->query("SELECT s.status_berkas FROM table_imb i 
+			JOIN table_status_berkas s 
+			WHERE i.table_status_berkas_id = s.id 
+			AND i.nomor_registrasi LIKE '$nomor_registrasi'");
+			return $query->result();
+		}
 
 
 		

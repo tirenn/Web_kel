@@ -1,22 +1,56 @@
-.panel-heading {
-    padding: 5px 15px;
+.carousel-caption #tittle {
+	font-size: 5vw;
+	font-family: 'Roboto', sans-serif;
 }
 
-.panel-footer {
-	padding: 1px 15px;
-	color: #A0A0A0;
+.carousel-caption #tittle2 {
+	font-size: 4vw;
+	font-family: 'Roboto', sans-serif;
+	color: #3175af;
 }
 
-.profile-img {
-	width: 96px;
-	height: 96px;
-	margin: 0 auto 10px;
-	display: block;
-	-moz-border-radius: 50%;
-	-webkit-border-radius: 50%;
-	border-radius: 50%;
+#bg{
+	-webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
 }
 
-#login :hover{
-    background-color: gray;
+.container-fluid{
+	background-color: #3174ae;
+}
+
+.navbar-default .navbar-brand{
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	
+}
+
+#status{
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	
+}
+
+#main{
+	padding-top: 5%;
+}
+
+#logo{
+	    width: 30px;
+    margin-bottom: -10px;
+    margin-top: -10px;
+}
+
+.panel-group {
+    margin-bottom: 20px;
+	padding-top: 5%;
+	padding-bottom:15%;
+}
+
+#label{
+	color: black;
+}
+
+.panel-body {
+    padding: 15px;
+    background-color: #ecebec;
 }

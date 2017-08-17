@@ -12,7 +12,12 @@ class Ktp extends CI_Controller{
     }
 
     public function index(){
-        $this->load->view('kelurahan');
+        if (isset($_SESSION['ID_USER'])) {
+            echo "admin";
+        }
+        else{
+            $this->load->view('kelurahan');                
+        }
     }
 
     function insert(){
@@ -47,7 +52,8 @@ class Ktp extends CI_Controller{
                     'pekerjaan' => strtoupper($_POST['pekerjaan']),
                     'alamat' => strtoupper('RT/'.$_POST['rt'].' RW/'.$_POST['rw'].' '.$_POST['alamat']),
                     'nomor_registrasi' => $noreg,
-                    'create_on' => $date
+                    'create_on' => $date,
+                    'is_deleted' => 0
                 );
 
                 $insert = $this->M_ktp->insert($data);

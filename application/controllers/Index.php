@@ -117,13 +117,13 @@ class Index extends CI_Controller{
 								'<div class="form-group">'.
 									'<label for="">Jenis Kelamin</label>'.
 									'<select class="form-control" name="jenis_kelamin'.$i.'" required>'.
-										'<option value="0" selected>Pilih Jenis Kelamin</option>'.
+										'<option value="" selected>Pilih Jenis Kelamin</option>'.
 										$select_jenis_kelamin.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Hubungan Keluarga</label>'.
-									'<select class="form-control" name="hubungan_keluarga'.$i.'">'.
+									'<select class="form-control" name="hubungan_keluarga'.$i.'"  required>'.
 										'<option value="" selected>Pilih Hubungan Keluarga</option>'.
 										$select_hubungan_keluarga.
 									'</select>'.
@@ -134,7 +134,7 @@ class Index extends CI_Controller{
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Nomor Akta Pengangkatan Anak</label>'.
-									'<input type="number" name="nomor_akta'.$i.'" class="form-control" placeholder="Masukkan Nomor Akta Pengangkatan Anak" required>'.
+									'<input type="number" name="nomor_akta'.$i.'" class="form-control" placeholder="Masukkan Nomor Akta Pengangkatan Anak">'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Tempat Lahir</label>'.
@@ -155,46 +155,46 @@ class Index extends CI_Controller{
 								'<div class="form-group">'.
 									'<label for="">Status Kawin</label>'.
 									'<select class="form-control" name="status_kawin'.$i.'" required>'.
-										'<option value="0" selected>Pilih Status Kawin</option>'.
+										'<option value="" selected>Pilih Status Kawin</option>'.
 										$select_status_kawin.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Nomor/Akta Tanggal Kawin/Cerai</label>'.
-									'<input type="text" name="nomor_kawin'.$i.'" class="form-control" placeholder="Masukkan Nomor/Akta Tanggal Kelahiran" required>'.
+									'<input type="text" name="nomor_kawin'.$i.'" class="form-control" placeholder="Masukkan Nomor/Akta Tanggal Kelahiran">'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Agama</label>'.
 									'<select class="form-control" name="agama'.$i.'" required>'.
-										'<option value="0" selected>Pilih Agama</option>'.
+										'<option value="" selected>Pilih Agama</option>'.
 										$select_agama.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Pilih Golongan Darah</label>'.
-									'<select class="form-control" name="golongan_darah'.$i.'">'.
-										'<option value="0" selected>Golongan Darah</option>'.
+									'<select class="form-control" name="golongan_darah'.$i.'" required>'.
+										'<option value="" selected>Golongan Darah</option>'.
 										$select_golongan_darah.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Pendidikan Terakhir</label>'.
-									'<select class="form-control" name="pendidikan_terakhir'.$i.'">'.
-										'<option value="0" selected>Pilih Pendidikan Terakhir</option>'.
+									'<select class="form-control" name="pendidikan_terakhir'.$i.'" required>'.
+										'<option value="" selected>Pilih Pendidikan Terakhir</option>'.
 										$select_pendidikan_terakhir.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Status Pendidikan</label>'.
-									'<select class="form-control" name="status_pendidikan'.$i.'">'.
-										'<option value="0" selected>Pilih Status Pendidikan</option>'.
+									'<select class="form-control" name="status_pendidikan'.$i.'" required>'.
+										'<option value="" selected>Pilih Status Pendidikan</option>'.
 										$select_status_pendidikan.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Kelompok Pekerjaan</label>'.
-									'<select class="form-control" name="kelompok_pekerjaan'.$i.'">'.
-										'<option value="0" selected>Pilih Kelompok Pekerjaan</option>'.
+									'<select class="form-control" name="kelompok_pekerjaan'.$i.'" required>'.
+										'<option value="" selected>Pilih Kelompok Pekerjaan</option>'.
 										$select_kelompok_pekerjaan.
 									'</select>'.
 								'</div>'.
@@ -204,19 +204,19 @@ class Index extends CI_Controller{
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Nomor dan Tanggal Surat Pindah</label>'.
-									'<input type="text" name="nomor_tgl_pindah'.$i.'" class="form-control" placeholder="Masukkan Nomor dan Tanggal Surat Pindah" required>'.
+									'<input type="text" name="nomor_tgl_pindah'.$i.'" class="form-control" placeholder="Masukkan Nomor dan Tanggal Surat Pindah">'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Kelainan Khusus</label>'.
 									'<select class="form-control" name="kelainan_khusus'.$i.'">'.
-										'<option value="0" selected>Pilih Kelainan Khusus</option>'.										
+										'<option value="" selected>Pilih Kelainan Khusus</option>'.										
 										$select_kelainan_khusus.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Akseptor KB</label>'.
 									'<select class="form-control" name="akseptor_kb'.$i.'">'.
-										'<option value="0" selected>Pilih Akseptor KB</option>'.
+										'<option value="" selected>Pilih Akseptor KB</option>'.
 										$select_akseptor_kb.
 									'</select>'.
 								'</div>'.
@@ -226,7 +226,7 @@ class Index extends CI_Controller{
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">NIK Ibu</label>'.
-									'<input type="text" name="nik_ibu'.$i.'" class="form-control" placeholder="Masukkan NIK Ibu" required>'.
+									'<input type="text" name="nik_ibu'.$i.'" class="form-control" placeholder="Masukkan NIK Ibu">'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Nama Ayah</label>'.
@@ -234,15 +234,11 @@ class Index extends CI_Controller{
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">NIK Ayah</label>'.
-									'<input type="text" name="nik_ayah'.$i.'" class="form-control" placeholder="Masukkan NIK Ayah" required>'.
-								'</div>'.
-								'<div class="form-group">'.
-									'<label for="">Tempat Tinggal Terakhir</label>'.
-									'<input type="text" name="tmp_tgl_terakhir'.$i.'" class="form-control" placeholder="Masukkan Tempat Tinggal Terakhir" required>'.
+									'<input type="text" name="nik_ayah'.$i.'" class="form-control" placeholder="Masukkan NIK Ayah">'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Keterangan (Catatan Lain)</label>'.
-									'<input type="text" name="note'.$i.'" class="form-control" placeholder="Masukkan Keterangan (Catatan Lain)" required>'.
+									'<input type="text" name="note'.$i.'" class="form-control" placeholder="Masukkan Keterangan (Catatan Lain)">'.
 								'</div>'.
 							
 							'</div>'.

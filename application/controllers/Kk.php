@@ -13,7 +13,12 @@ class Kk extends CI_Controller{
     }
 
     public function index(){
-        $this->load->view('kelurahan');
+        if (isset($_SESSION['ID_USER'])) {
+            echo "admin";
+        }
+        else{
+            $this->load->view('kelurahan');                
+        }
     }
 
     function insert(){
@@ -44,7 +49,8 @@ class Kk extends CI_Controller{
                         'table_status_berkas_id' => 1,
                         'alamat' => strtoupper('RT/'.$_POST['rt'].' RW/'.$_POST['rw'].' '.$_POST['alamat']),
                         'nomor_registrasi' => $noreg,
-                        'create_on' => $date
+                        'create_on' => $date,
+                        'is_deleted' => 0
                     );
 
                     $insert = $this->M_kk_header->insert($data_header);
@@ -79,9 +85,9 @@ class Kk extends CI_Controller{
                                 'nik_ibu' => strtoupper($_POST['nik_ibu'.$i.'']),
                                 'nama_ayah' => strtoupper($_POST['nama_ayah'.$i.'']),
                                 'nik_ayah' => strtoupper($_POST['nik_ayah'.$i.'']),
-                                'tempat_tinggal_terakhir_ortu' => strtoupper($_POST['tmp_tgl_terakhir'.$i.'']),
                                 'keterangan' => strtoupper($_POST['note'.$i.'']),
-                                'create_on' => $date
+                                'create_on' => $date,
+                                'is_deleted' => 0
                             ); //end data detail
 
                             $insert = $this->M_kk_detail->insert($data_detail[$i]);

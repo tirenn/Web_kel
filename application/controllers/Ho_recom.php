@@ -12,7 +12,12 @@ class Ho_recom extends CI_Controller{
     }
 
     public function index(){
-        $this->load->view('kelurahan');
+        if (isset($_SESSION['ID_USER'])) {
+            echo "admin";
+        }
+        else{
+            $this->load->view('kelurahan');                
+        }
     }
 
     function insert(){
@@ -56,7 +61,8 @@ class Ho_recom extends CI_Controller{
                     'luas_usaha' => strtoupper($_POST['luas_usaha']),
                     'status_tanah' => strtoupper($_POST['status_tanah']),
                     'nomor_registrasi' => $noreg,
-                    'create_on' => $date
+                    'create_on' => $date,
+                    'is_deleted' => 0
                 );
 
                 $insert = $this->M_ho->insert($data);
