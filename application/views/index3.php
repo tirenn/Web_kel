@@ -60,29 +60,81 @@
 	</nav>
 	<!--<br><br><br>-->
 	<!--start slider-->
-	
+	<section class="slider-area" id="slider-area">
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<img id="jumbotron" src="http://www.arenttour.com/wp-content/uploads/2014/09/malang1.jpg" alt="...">
+					<div class="carousel-caption">
+						<h1>Sistem Pelayanan Publik</h1>
+						<h2><span>Pemerintah Desa Landungsari</span></h2>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
 	<!--end slider-->
-    <section class="text-center" id="tittle">
-		<div>Status Registrasi</div>
-		<hr>
+    <section class="text-center" id="tittlepage">
+        <h3>Cek Status Registrasi</h3>
+        <hr>
     </section>
 
 	<!--start groom & bride-->
 	<section>
-		<div class="container" style="" id="main">
+		<div class="container" style="margin-top:3%;" id="main">
 			<div class="row">
-				<div class="col-xs-12 text-center">
-					<h4>Nomor Registrasi:</h4>
-					<h3 style="color:green;"><?php echo $noreg; ?></h3>
+				<div class="col-xs-8">
+                    
+                    <div id="status">
+                        <div class="panel panel-primary">				
+                            <div class="panel-heading">Cek Status Registrasi</div>
+                            <form action="<?php echo base_url();?>Status_regis/search" method="POST">
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label for="">Jenis Pelayanan</label>
+                                    <select class="form-control" name="jenis_layanan" required>
+                                        <option value="" selected>Pilih Pelayanan</option>
+                                        <option value="1">HO Recom</option>
+                                        <option value="2">IMB</option>
+                                        <option value="3">Kartu Keluarga</option>
+                                        <option value="4">Kartu Tanda Penduduk</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Nomor Registrasi</label>
+                                    <input type="text" name="noreg" class="form-control" placeholder="Masukkan Nomor Registrasi" required>
+                                </div>
+                                <!-- recaptcha -->
+								<div class="g-recaptcha" data-sitekey="6Lc9FC0UAAAAAPuoZ3GdQhUtBM4xBNCJ3txJuROu"></div>
+								<!-- end -->
+								<div class="text-right" id="submit">
+									<button type="submit" class="btn btn-prim">Submit</button>
+								</div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-xs-4">
+					<div class="panel-group">
+						<div class="panel panel-primary">
+							<div class="panel-heading">Navigation</div>
+							<div class="panel-body">
+								<!-- start status -->
+                                <a href="<?php echo base_url();?>">Layanan Online</a>
+                                <br>
+								<a href="<?php echo base_url();?>Status_regis">Cek Status</a>
+								<!-- end status		 -->
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="col-xs-12 text-center">
-					<h4><?php echo $value; ?></h4>
-				</div>
-				<div class="text-center">
-					<br>
-					<a href="<?php echo base_url();?>Status_regis"><button type="button" class="btn btn-primary">Kembali</button></a>
-				</div>
-			</div>
+
+            </div>
             <!-- end row -->
 		</div>
 	</section>
@@ -140,6 +192,30 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="<?php echo base_url();?>/assets/js/bootstrap.min.js"></script>
+
+	<script>
+		window.fbAsyncInit = function () {
+			FB.init({
+				appId: '2fea6f8b9346c9bb00e28111b3cb99b2',
+				autoLogAppEvents: true,
+				xfbml: true,
+				version: 'v2.9'
+			});
+			FB.AppEvents.logPageView();
+		};
+
+		(function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {
+				return;
+			}
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+
+	</script>
 
 
 	<script type='text/javascript'>

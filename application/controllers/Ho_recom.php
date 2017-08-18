@@ -12,12 +12,9 @@ class Ho_recom extends CI_Controller{
     }
 
     public function index(){
-        if (isset($_SESSION['ID_USER'])) {
-            echo "admin";
-        }
-        else{
+        
             $this->load->view('kelurahan');                
-        }
+        
     }
 
     function insert(){
@@ -76,9 +73,14 @@ class Ho_recom extends CI_Controller{
             }//end succes
             else
             {
-                // $success = false;
-                echo 'salah';
+                $data['error'] = 'Wrong CAPTCHA';
+                $data['back'] = '';
+                $this->load->view('error', $data);
             }
+        }else{
+            $data['error'] = 'Wrong CAPTCHA';
+                $data['back'] = '';
+                $this->load->view('error', $data);
         }
 
 

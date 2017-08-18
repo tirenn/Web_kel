@@ -63,7 +63,7 @@
 	
 	<!--end slider-->
     <section class="text-center" id="tittle">
-		<div>Status Registrasi</div>
+		<div>Terima Kasih</div>
 		<hr>
     </section>
 
@@ -72,11 +72,18 @@
 		<div class="container" style="" id="main">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<h4>Nomor Registrasi:</h4>
-					<h3 style="color:green;"><?php echo $noreg; ?></h3>
+					<h4>Nomor Registrasi Anda:</h4>
+					<h3 style="color:green;">sdasdadafasdas</h3>
 				</div>
 				<div class="col-xs-12 text-center">
-					<h4><?php echo $value; ?></h4>
+					<h5>Harap menyimpan Nomor Registrasi Anda</h5>
+					<br>
+				</div>
+				<div class="text-center">
+					<p><strong>1.</strong> Tampilkan <a href=""><strong>SYARAT IZIN MENDIRIKAN BANGUNAN (IMB)</strong></a> FUNGSI BANGUNAN</p>
+					<p><strong>2.</strong> Link Download <a href=""><strong>Surat Pernyataan Para Tetangga</strong></a></p>
+					<p><strong>3.</strong> Link Download <a href=""><strong>Surat Kuasa</strong></a></p>
+					<p><strong>4.</strong> Link Download <a href=""><strong>Denah Lokasi Bangunan</strong></a></p>
 				</div>
 				<div class="text-center">
 					<br>

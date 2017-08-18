@@ -63,8 +63,8 @@
 	
 	<!--end slider-->
     <section class="text-center" id="tittle">
-		<div>Status Registrasi</div>
-		<hr>
+        <div>Error</div>
+        <hr>
     </section>
 
 	<!--start groom & bride-->
@@ -72,15 +72,12 @@
 		<div class="container" style="" id="main">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<h4>Nomor Registrasi:</h4>
-					<h3 style="color:green;"><?php echo $noreg; ?></h3>
+					<h4><?php echo $error; ?></h4>
 				</div>
-				<div class="col-xs-12 text-center">
-					<h4><?php echo $value; ?></h4>
-				</div>
+				
 				<div class="text-center">
 					<br>
-					<a href="<?php echo base_url();?>Status_regis"><button type="button" class="btn btn-primary">Kembali</button></a>
+					<a href="<?php echo base_url();?><?php echo $back ?>"><button type="button" class="btn btn-primary">Kembali</button></a>
 				</div>
 			</div>
             <!-- end row -->

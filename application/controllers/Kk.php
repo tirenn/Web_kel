@@ -13,12 +13,9 @@ class Kk extends CI_Controller{
     }
 
     public function index(){
-        if (isset($_SESSION['ID_USER'])) {
-            echo "admin";
-        }
-        else{
+     
             $this->load->view('kelurahan');                
-        }
+     
     }
 
     function insert(){
@@ -91,26 +88,39 @@ class Kk extends CI_Controller{
                             ); //end data detail
 
                             $insert = $this->M_kk_detail->insert($data_detail[$i]);
-                            if(true==$insert){
-                                echo"benar";
-                            }else{
-                                $result="Gagal Menyimpan Data";
-                                echo $result;
-                            }
+                            // if(true==$insert){
+                            //     echo"benar";
+                            // }else{
+                            //     $result="Gagal Menyimpan Data";
+                            //     echo $result;
+                            // }
 
                         }//end for
+                        if(true==$insert){
+                                echo"benar";
+                        }else{
+                            $data['error'] = 'Gagal Menyimpan Data, Silahkan Coba Lagi';
+                            $data['back'] = '';
+                            $this->load->view('error', $data);
+                        }
 
                     }else{
-                        $result="Gagal Menyimpan Data";
-                        echo $result;
+                        $data['error'] = 'Gagal Menyimpan Data, Silahkan Coba Lagi';
+                        $data['back'] = '';
+                        $this->load->view('error', $data);
                     }
 
 
             }//end succes
             else{
-                // $success = false;
-                echo 'salah';
+                $data['error'] = 'Wrong CAPTCHA';
+                $data['back'] = '';
+                $this->load->view('error', $data);
             }
+        }else{
+            $data['error'] = 'Wrong CAPTCHA';
+                $data['back'] = '';
+                $this->load->view('error', $data);
         }
 
         

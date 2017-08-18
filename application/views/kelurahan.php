@@ -125,7 +125,7 @@
 								</div>
 								<div class="form-group">
 									<label for="">Telefon/Fax</label>
-									<input type="number" name="telefon_atau_fax" class="form-control" placeholder="Masukkan Telefon/Fax" required>
+									<input type="number" min="0" name="telefon_atau_fax" class="form-control" placeholder="Masukkan Telefon/Fax" required>
 								</div>
 								<div class="form-group">
 									<label for="">Jenis Kelamin</label>
@@ -155,7 +155,7 @@
 								</div>
 								<div class="form-group">
 									<label for="">Telefon Perusahaan</label>
-									<input type="number" name="noTelp_perusahaan" class="form-control" placeholder="Masukkan Telefon Perusahaan" required>
+									<input type="number" min="0" name="noTelp_perusahaan" class="form-control" placeholder="Masukkan Telefon Perusahaan" required>
 								</div>
 								<div class="form-group">
 									<label for="">Jenis Permohonan</label>
@@ -176,11 +176,11 @@
 								</div>
 								<div class="form-group">
 									<label for="">Luas Tanah (m<sup>2</sup>)</label>
-									<input type="number" name="luas_tanah" class="form-control" placeholder="Masukkan Luas Bangunan" required>
+									<input type="number" min="0" name="luas_tanah" class="form-control" placeholder="Masukkan Luas Bangunan" required>
 								</div>
 								<div class="form-group">
 									<label for="">Luas Usaha (m<sup>2</sup>)</label>
-									<input type="number" name="luas_usaha" class="form-control" placeholder="Masukkan Luas Bangunan" required>
+									<input type="number" min="0" name="luas_usaha" class="form-control" placeholder="Masukkan Luas Bangunan" required>
 								</div>
 								<div class="form-group">
 									<label for="">Status Tanah</label>
@@ -234,7 +234,7 @@
 								</div>
 								<div class="form-group">
 									<label for="">Telefon/Fax</label>
-									<input type="number" name="telefon_atau_fax" class="form-control" placeholder="Masukkan Telefon/Fax" required>
+									<input type="number" min="0" name="telefon_atau_fax" class="form-control" placeholder="Masukkan Telefon/Fax" required>
 								</div>
 								<div class="form-group">
 									<label for="">Jenis Kelamin</label>
@@ -277,7 +277,7 @@
 								</div>
 								<div class="form-group">
 									<label for="">Luas Bangunan (m<sup>2</sup>)</label>
-									<input type="number" name="luas_bangunan" class="form-control" placeholder="Masukkan Luas Bangunan" required>
+									<input type="number" min="0" name="luas_bangunan" class="form-control" placeholder="Masukkan Luas Bangunan" required>
 								</div>
 								<div class="form-group">
 									<label for="">Fungsi Bangunan</label>
@@ -390,7 +390,6 @@
 
 				<!-- start ktp -->
 				<div id="ktp">
-					<h1>KTP</h1>
 					<div class="panel panel-primary">
 						<div class="panel-heading">Kartu Tanda Penduduk</div>
 						<div class="panel-body">
@@ -465,7 +464,7 @@
 									<div class="col-xs-6">
 										<div class="form-group">
 											<label for="">RW</label>
-											<input type="number" name="rw" class="form-control" placeholder="Masukkan RW" required>
+											<input type="number" min="0" name="rw" class="form-control" placeholder="Masukkan RW" required>
 										</div>
 									</div>
 								</div>

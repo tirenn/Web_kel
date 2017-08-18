@@ -36,7 +36,7 @@ class Index extends CI_Controller{
 				'jenis_permohonan_kk' => $this->M_jenis_permohonan_kk->getJenisPermohonan(),
 				'golongan_darah' => $this->M_golongan_darah->getGolonganDarah()
 				);
-        $this->load->view('kelurahan', $data);
+        $this->load->view('index2', $data);
     }
 
     public function kk(){
@@ -130,11 +130,11 @@ class Index extends CI_Controller{
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Anak ke-</label>'.
-									'<input type="number" name="anak_ke'.$i.'" class="form-control" placeholder="Masukkan Anak ke-" required>'.
+									'<input type="number" min="0" name="anak_ke'.$i.'" class="form-control" placeholder="Masukkan Anak ke-" required>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Nomor Akta Pengangkatan Anak</label>'.
-									'<input type="number" name="nomor_akta'.$i.'" class="form-control" placeholder="Masukkan Nomor Akta Pengangkatan Anak">'.
+									'<input type="number" min="0" name="nomor_akta'.$i.'" class="form-control" placeholder="Masukkan Nomor Akta Pengangkatan Anak">'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Tempat Lahir</label>'.
