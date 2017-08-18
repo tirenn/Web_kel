@@ -55,10 +55,13 @@ class Ktp extends CI_Controller{
 
                 $insert = $this->M_ktp->insert($data);
                 if(true==$insert){
-                    echo"benar";
+                    $data['noreg'] = $noreg;
+                    $data['back'] = '';
+                    $this->load->view('success', $data);
                 }else{
-                    $result="Gagal Menyimpan Data";
-                    echo $result;
+                    $data['error'] = 'Gagal Menyimpan Data, Silahkan Coba Lagi';
+                    $data['back'] = '';
+                    $this->load->view('error', $data);
                 }
 
 

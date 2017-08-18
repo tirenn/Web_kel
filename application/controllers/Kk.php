@@ -97,7 +97,9 @@ class Kk extends CI_Controller{
 
                         }//end for
                         if(true==$insert){
-                                echo"benar";
+                            $data['noreg'] = $noreg;
+                            $data['back'] = '';
+                            $this->load->view('success', $data);
                         }else{
                             $data['error'] = 'Gagal Menyimpan Data, Silahkan Coba Lagi';
                             $data['back'] = '';

@@ -73,7 +73,7 @@
 			<div class="row">
 				<div class="col-xs-12 text-center">
 					<h4>Nomor Registrasi Anda:</h4>
-					<h3 style="color:green;">sdasdadafasdas</h3>
+					<h3 style="color:green;"><?php echo $noreg; ?></h3>
 				</div>
 				<div class="col-xs-12 text-center">
 					<h5>Harap menyimpan Nomor Registrasi Anda</h5>

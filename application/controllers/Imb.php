@@ -65,10 +65,13 @@ class Imb extends CI_Controller{
 
                 $insert = $this->M_imb->insert($data);
                 if(true==$insert){
-                    echo"benar";
+                    $data['noreg'] = $noreg;
+                    $data['back'] = '';
+                    $this->load->view('success_imb', $data);
                 }else{
-                    $result="Gagal Menyimpan Data";
-                    echo $result;
+                    $data['error'] = 'Gagal Menyimpan Data, Silahkan Coba Lagi';
+                    $data['back'] = '';
+                    $this->load->view('error', $data);
                 }
 
             }//end succes
