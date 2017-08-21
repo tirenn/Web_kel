@@ -2,37 +2,46 @@
 <html lang="en">
 
 <head>
-	<title>IMB Register Sukses</title>
+	<title>Success Page - HO</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Project PKL">
+	<meta name="description" content="Tugas KKN TTV">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/reset.css">
 	<link href="<?php echo base_url();?>/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo base_url();?>/assets/css/font-awesome.min.css">
-	<link rel="stylesheet" href="<?php echo base_url();?>/assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css">
 	<link rel="stylesheet" href="<?php echo base_url();?>/assets/css/lightbox.min.css">
     <script src="<?php echo base_url();?>/assets/js/lightbox-plus-jquery.min.js"></script>
     <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
 
 <body>
 
-<nav class="navbar navbar-default navbar-fixed-top khususho">
+
+	<nav class="navbar navbar-default navbar-fixed-top" style="background:rgb(37, 37, 37);">
 		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
 				aria-expanded="false">
+                    <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">-->
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
 				<a class="navbar-brand no-padding" href="#" id="navbr">
-                    <strong>Sistem Pelayanan Publik</strong>
+                    <strong> Sistem Pelayanan Publik</strong>
                 </a>
 			</div>
 
+			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#slider-area">Home<span class="sr-only">(current)</span></a></li>
@@ -42,46 +51,74 @@
 					<li><a href="#slider-area">Kesehatan<span class="sr-only">(current)</span></a></li>
 					<li><a href="#slider-area">Fasilitas Umum<span class="sr-only">(current)</span></a></li>
 					<li><a href="#slider-area">Produk Hukum<span class="sr-only">(current)</span></a></li>
+
 				</ul>
 			</div>
+			<!-- /.navbar-collapse -->
 		</div>
+		<!-- /.container-fluid -->
 	</nav>
+	<!--<br><br><br>-->
+	<!--start slider-->
+	<!-- <section class="slider-area" id="slider-area">
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
-    <section class="text-center section-success section-cont" id="tittlepage">
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<img id="jumbotron" src="<?php echo base_url();?>assets/images/malang.jpg" alt="...">
+					<div class="carousel-caption">
+						<h1 class="edit-h1">Data Tersimpan.</h1>
+                        <h2 class="edit-h2">"Terima kasih. Formulir Permohonan Anda telah tersimpan di sistem kami. 
+						<br>Nomor Registrasi Anda adalah<br>
+						<strong><?php echo $noreg; ?></strong>
+						<br>Selanjutnya mohon lengkapi dokumen di bawah dan dibawa ke Kantor Desa Landungsari."</h2>
+						<br><br>
+                        <a href="#tittlepage" class="btn btn-danger btn-custom btnlink newbtn">Link Unduh</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section> -->
+	<!--end slider-->
+
+    <section class="text-center" id="tittlepage" style="margin-top:20%;">
         <br><br>
 		<div class="container">
-        	<div class="col-xs-12 text-cont">
-				<h1 class="edit-h1">Data Tersimpan!</h1>
-				<span class="text-center success-text">"Terima kasih. Formulir Permohonan Anda telah tersimpan di sistem kami. 
-				<br>Nomor Registrasi Anda adalah<br>
-				<strong><?php echo $noreg;?></strong>.<br>Selanjutnya, mohon lengkapi dokumen di bawah dan dibawa ke Kantor Desa Landungsari."</span>
-				<div class="spacer"></div>
-           		<div class="spacer"></div>
-            	<div class="spacer"></div>
-            </div>
-		</div>
-            <div class="panel-group col-md-6 col-md-offset-3">
+        <div class="col-xs-12">
+			<h1 class="edit-h1" style="color:#ff6d6d;">Data Tersimpan!</h1>
+			<h2 class="edit-h2">"Terima kasih. Formulir Permohonan Anda telah tersimpan di sistem kami. 
+			<br>Nomor Registrasi Anda adalah<br>
+			<strong><?php echo $noreg; ?></strong>
+			<br>Selanjutnya mohon lengkapi dokumen di bawah dan dibawa ke Kantor Desa Landungsari."</h2>
+			<br><br><br><br><br><br>
+
+            <div class="panel-group">
                 <div class="panel panel-primary">
                     <div class="panel-heading bigger">Link Unduh</div>
-                    	<div class="panel-body">
-                        	<ul class="list-menu">
-	                            <li><a href="#">Tampilkan SYARAT IZIN MENDIRIKAN BANGUNAN (IMB) FUNGSI BANGUNGAN.</a></li>
-	                            <li><a href="#">Unduh Surat Pernyataan Para Tetangga</a></li>
-	                            <li><a href="#">Unduh Surat Izin Tempat Usaha</a></li>
-	                            <li><a href="#">Unduh Surat Kuasa.</a></li>
-	                            <li><a href="#">Unduh Denah Lokasi Bangunan.</a></li>
-                        	</ul>
-                    	</div>
-                	</div>
-            	</div>
-        	</div>
+                    <div class="panel-body">
+                        <ul class="list-menu">
+                            <li><a href="#">Tampilkan SYARAT IZIN (HO).</a></li>
+                            <li><a href="#">Unduh Surat Pernyataan Para Tetangga.</a></li>
+                            <li><a href="#">Unduh Surat Izin Tempat Usaha.</a></li>
+                            <li><a href="#">Unduh Surat Izin Kepemilikan Lahan.</a></li>
+                            <li><a href="#">Unduh Surat Pencegahan Gangguan dan Pencemaran Lingkungan.</a></li>
+                            <li><a href="#">Unduh Surat Surat Kuasa.</a></li>
+                            <li><a href="#">Unduh Denah Lokasi Usaha.</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+		</div>
         <div class="clearfix"></div>
-		<a href="<?php echo base_url();?>/<?php echo $back;?>"><button type="button" class="btn btn-primary">Kembali</button></a>
+		<a href="<?php echo base_url();?><?php echo $back;?>"><button type="button" class="btn btn-primary">Kembali</button></a>
+
     </section>
 
 	<footer>
         <div class="container">
-            <div class="row rowkhususho">
+            <div class="row">
                 <div class="col-md-3 col-sm-6 col-xs-12 footer-col">
                     <h6 class="heading7">LANDUNGSARI</h6>
                     <p>Desa Landungsari memiliki makna yaitu Landung sama dengan "Panjang", Sari adalah "Inti atau Madu", dan dapat diartikan "Panjang Penggalihe, Punjung Rejekine".</p>
@@ -107,19 +144,16 @@
                         <li><i class="fa fa-google-plus social-icon google" aria-hidden="true"></i></li>
                     </ul>
                 </div>
-                <div class="spacer"></div>
-                <div class="spacer"></div>
-                <div class="spacer"></div>
             </div>
-        </div> 
+        </div>
+        
     </footer>
-
     <div class="copyright">
         <div class="container">
-            <div class="col-sm-6">
-                <p>&copy; Developed by Tim PKL MadaniTech Nusantara</p>
+            <div class="col-md-6">
+                <p>&copy; Developed by MadaniTech Nusantara</p>
             </div>
-            <div class="col-sm-6 backtotop-cont">
+            <div class="col-md-6">
             <a href="#" class="btn btn-danger btn-custom backtotop">Back to Top</a>
             </div>
         </div>
@@ -250,4 +284,5 @@
     </script>
 
 </body>
+
 </html>

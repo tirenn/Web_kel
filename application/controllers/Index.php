@@ -36,8 +36,18 @@ class Index extends CI_Controller{
 				'jenis_permohonan_kk' => $this->M_jenis_permohonan_kk->getJenisPermohonan(),
 				'golongan_darah' => $this->M_golongan_darah->getGolonganDarah()
 				);
-        $this->load->view('index2', $data);
+        $this->load->view('index-main', $data);
     }
+
+	function cap(){
+		$cap = "<?php require_once('recaptchalib.php'); echo recaptcha_get_html('6LeZbC0UAAAAAIUIaYPYkBhBkxrkl4nd9bUvP5Zo');?>"; 
+		
+		$data = array(
+			'cap' => htmlspecialchars($cap)
+		);
+		$a=htmlspecialchars($cap);
+		echo json_encode($a);
+	}
 
     public function kk(){
 		$agama = $this->M_agama->getAgama();
@@ -112,95 +122,95 @@ class Index extends CI_Controller{
 							
 								'<div class="form-group">'.
 									'<label for="">Nama Lengkap</label>'.
-									'<input type="text" name="nama_lengkap'.$i.'" class="form-control" placeholder="Masukkan Nama Lengkap" required>'.
+									'<input type="text" name="nama_lengkap'.$i.'" data-validation="required" data-validation-error-msg-required="Nama Lengkap Tidak Boleh Kosong" class="form-control" placeholder="Masukkan Nama Lengkap">'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Jenis Kelamin</label>'.
-									'<select class="form-control" name="jenis_kelamin'.$i.'" required>'.
+									'<select class="form-control" name="jenis_kelamin'.$i.'" data-validation="required" data-validation-error-msg-required="Jenis Kelamin Tidak Boleh Kosong">'.
 										'<option value="" selected>Pilih Jenis Kelamin</option>'.
 										$select_jenis_kelamin.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Hubungan Keluarga</label>'.
-									'<select class="form-control" name="hubungan_keluarga'.$i.'"  required>'.
+									'<select class="form-control" name="hubungan_keluarga'.$i.'"  data-validation="required" data-validation-error-msg-required="Hubungan Keluarga Tidak Boleh Kosong">'.
 										'<option value="" selected>Pilih Hubungan Keluarga</option>'.
 										$select_hubungan_keluarga.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Anak ke-</label>'.
-									'<input type="number" min="0" name="anak_ke'.$i.'" class="form-control" placeholder="Masukkan Anak ke-" required>'.
+									'<input type="text" name="anak_ke'.$i.'" data-validation="number" data-validation-error-msg-required="Anak ke- Tidak Boleh Kosong"  data-validation-error-msg="Anak ke- Harus Angka" class="form-control" placeholder="Masukkan Anak ke-">'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Nomor Akta Pengangkatan Anak</label>'.
-									'<input type="number" min="0" name="nomor_akta'.$i.'" class="form-control" placeholder="Masukkan Nomor Akta Pengangkatan Anak">'.
+									'<input type="text" data-validation="number" data-validation-error-msg="Nomor Akta Pengangkatan Anak Harus Angka" name="nomor_akta'.$i.'" class="form-control" placeholder="Masukkan Nomor Akta Pengangkatan Anak">'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Tempat Lahir</label>'.
-									'<input type="text" name="tempat_lahir'.$i.'" class="form-control" placeholder="Masukkan Tempat Lahir" required>'.
+									'<input type="text" name="tempat_lahir'.$i.'" data-validation="required" data-validation-error-msg-required="Tempat Lahir Tidak Boleh Kosong" class="form-control" placeholder="Masukkan Tempat Lahir">'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Tanggal Lahir</label>'.
-									'<input type="date" name="tanggal_lahir'.$i.'" class="form-control" required>'.
+									'<input type="text" name="tanggal_lahir'.$i.'" id="datepicker'.$i.'" data-validation="birthdate" data-validation-format="mm/dd/yyyy" data-validation-error-msg-required="Tanggal Lahir Tidak Boleh Kosong" data-validation-error-msg="Tanggal Lahir Tidak Boleh Lebih Dari Hari Ini" class="form-control">'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">NIK</label>'.
-									'<input type="text" name="nik'.$i.'" class="form-control" placeholder="Masukkan NIK" required>'.
+									'<input type="text" name="nik'.$i.'" data-validation="number" data-validation-error-msg-required="NIK Tidak Boleh Kosong"  data-validation-error-msg="NIK Harus Angka" class="form-control" placeholder="Masukkan NIK">'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Nomor/Akta Tanggal Kelahiran</label>'.
-									'<input type="text" name="nomor_kelahiran'.$i.'" class="form-control" placeholder="Masukkan Nomor/Akta Tanggal Kelahiran" required>'.
+									'<input type="text" data-validation="required" data-validation-error-msg-required="Nomor/Akta Tanggal Kelahiran Tidak Boleh Kosong" name="nomor_kelahiran'.$i.'" class="form-control" placeholder="Masukkan Nomor/Akta Tanggal Kelahiran">'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Status Kawin</label>'.
-									'<select class="form-control" name="status_kawin'.$i.'" required>'.
+									'<select class="form-control" name="status_kawin'.$i.'" data-validation="required" data-validation-error-msg-required="Status Kawin Tidak Boleh Kosong">'.
 										'<option value="" selected>Pilih Status Kawin</option>'.
 										$select_status_kawin.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Nomor/Akta Tanggal Kawin/Cerai</label>'.
-									'<input type="text" name="nomor_kawin'.$i.'" class="form-control" placeholder="Masukkan Nomor/Akta Tanggal Kelahiran">'.
+									'<input type="text" name="nomor_kawin'.$i.'" class="form-control" placeholder="Masukkan Nomor/Akta Tanggal Kawin/Cerai">'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Agama</label>'.
-									'<select class="form-control" name="agama'.$i.'" required>'.
+									'<select class="form-control" name="agama'.$i.'" data-validation="required" data-validation-error-msg-required="Agama Tidak Boleh Kosong">'.
 										'<option value="" selected>Pilih Agama</option>'.
 										$select_agama.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Pilih Golongan Darah</label>'.
-									'<select class="form-control" name="golongan_darah'.$i.'" required>'.
+									'<select class="form-control" name="golongan_darah'.$i.'" data-validation="required" data-validation-error-msg-required="Golongan Darah Tidak Boleh Kosong">'.
 										'<option value="" selected>Golongan Darah</option>'.
 										$select_golongan_darah.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Pendidikan Terakhir</label>'.
-									'<select class="form-control" name="pendidikan_terakhir'.$i.'" required>'.
+									'<select class="form-control" name="pendidikan_terakhir'.$i.'" data-validation="required" data-validation-error-msg-required="Pendidikan Terakhir Tidak Boleh Kosong">'.
 										'<option value="" selected>Pilih Pendidikan Terakhir</option>'.
 										$select_pendidikan_terakhir.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Status Pendidikan</label>'.
-									'<select class="form-control" name="status_pendidikan'.$i.'" required>'.
+									'<select class="form-control" name="status_pendidikan'.$i.'" data-validation="required" data-validation-error-msg-required="Status Pendidikan Tidak Boleh Kosong">'.
 										'<option value="" selected>Pilih Status Pendidikan</option>'.
 										$select_status_pendidikan.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Kelompok Pekerjaan</label>'.
-									'<select class="form-control" name="kelompok_pekerjaan'.$i.'" required>'.
+									'<select class="form-control" name="kelompok_pekerjaan'.$i.'" data-validation="required" data-validation-error-msg-required="Kelompok Pekerjaan Tidak Boleh Kosong">'.
 										'<option value="" selected>Pilih Kelompok Pekerjaan</option>'.
 										$select_kelompok_pekerjaan.
 									'</select>'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Tempat Tinggal Terakhir</label>'.
-									'<input type="text" name="tempat_tinggal_terakhir'.$i.'" class="form-control" placeholder="Masukkan Tempat Tinggal Terakhir" required>'.
+									'<input type="text" name="tempat_tinggal_terakhir'.$i.'" class="form-control" placeholder="Masukkan Tempat Tinggal Terakhir" data-validation="required" data-validation-error-msg-required="Tempat Tinggal Terakhir Tidak Boleh Kosong">'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Nomor dan Tanggal Surat Pindah</label>'.
@@ -222,7 +232,7 @@ class Index extends CI_Controller{
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Nama Ibu</label>'.
-									'<input type="text" name="nama_ibu'.$i.'" class="form-control" placeholder="Masukkan Nama Ibu" required>'.
+									'<input type="text" name="nama_ibu'.$i.'" class="form-control" placeholder="Masukkan Nama Ibu" data-validation="required" data-validation-error-msg-required="Nama Ibu Tidak Boleh Kosong">'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">NIK Ibu</label>'.
@@ -230,7 +240,7 @@ class Index extends CI_Controller{
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">Nama Ayah</label>'.
-									'<input type="text" name="nama_ayah'.$i.'" class="form-control" placeholder="Masukkan Nama Ayah" required>'.
+									'<input type="text" name="nama_ayah'.$i.'" class="form-control" placeholder="Masukkan Nama Ayah" data-validation="required" data-validation-error-msg-required="Nama Ayah Tidak Boleh Kosong">'.
 								'</div>'.
 								'<div class="form-group">'.
 									'<label for="">NIK Ayah</label>'.
@@ -242,7 +252,12 @@ class Index extends CI_Controller{
 								'</div>'.
 							
 							'</div>'.
-						'</div>';
+						'</div>'.
+						'<script>'.
+					'$( function() {'.
+						'$("#datepicker'.$i.'").datepicker();'.
+					'} );'.
+					'</script>';
 		}
 		echo json_encode($select_box);
     }

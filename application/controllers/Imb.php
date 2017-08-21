@@ -19,21 +19,30 @@ class Imb extends CI_Controller{
 
     function insert(){
 
-        $secret_key = '6Lc9FC0UAAAAAMSZhyik9GfpH5dUK5JmxUYvtkrO';
+        $secret_key = '6LdHMy0UAAAAAAvT3uqEchMALHldwIawuC9TxZJS';
         if(isset($_POST['g-recaptcha-response']))
         {
             $api_url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . $secret_key . '&response='.$_POST['g-recaptcha-response'];
-            $response = @file_get_contents($api_url);
-            $data = json_decode($response, true);
+            // $response = @file_get_contents($api_url);
+            // $data = json_decode($response, true);
  
+            $ch = curl_init($api_url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $result = curl_exec($ch);
+            $data = json_decode($result, true);
+                   
             if($data['success']){
         
                 date_default_timezone_set("Asia/Bangkok");
                 $date = date('Y-m-d H:i:s', time());
-                $no = $_SESSION['regimb'];
+                $query = $this->M_imb->getNoreg();
+                foreach ($query as $row){
+                    $noreg = $row->noreg;
+                }
+                $no = $noreg+1;
                 $nom = str_pad($no,3,0,STR_PAD_LEFT);
-                $noreg = "REG-".date('m')."".date('d')."-IMB-".$nom;
-                $_SESSION['regimb'] = $no+1;
+                $noreg = "REG-".date('m')."".substr(date('Y'),2)."-IMB-".$nom;
+                
                 
                 $data = array(
                     'id' => $this->uuid->v4(),            

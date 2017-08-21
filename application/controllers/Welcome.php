@@ -21,6 +21,11 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		echo "dsadadasdas";
+		echo "detik";
+		
+	}
+
+	function a($data){
+		echo $data;
 	}
 }

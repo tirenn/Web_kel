@@ -29,6 +29,10 @@
 			return $query->result();
 		}
 
+		function getNoreg(){
+			$query = $this->db->query("SELECT substring(nomor_registrasi,14) AS noreg FROM `table_imb` WHERE nomor_registrasi LIKE (SELECT MAX(nomor_registrasi) FROM table_imb)");
+			return $query->result();
+		}
 
 		
 	}

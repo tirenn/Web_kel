@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>IMB Register Sukses</title>
+	<title>Registrasi Sukses</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Project PKL">
@@ -18,8 +18,8 @@
 
 <body>
 
-<nav class="navbar navbar-default navbar-fixed-top khususho">
-		<div class="container">
+	<nav class="navbar navbar-default navbar-fixed-top khususho">
+		<div class="container"> 
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
 				aria-expanded="false">
@@ -29,7 +29,7 @@
                         <span class="icon-bar"></span>
                     </button>
 				<a class="navbar-brand no-padding" href="#" id="navbr">
-                    <strong>Sistem Pelayanan Publik</strong>
+                    <strong>PemDes Landungsari</strong>
                 </a>
 			</div>
 
@@ -42,47 +42,24 @@
 					<li><a href="#slider-area">Kesehatan<span class="sr-only">(current)</span></a></li>
 					<li><a href="#slider-area">Fasilitas Umum<span class="sr-only">(current)</span></a></li>
 					<li><a href="#slider-area">Produk Hukum<span class="sr-only">(current)</span></a></li>
+
 				</ul>
 			</div>
 		</div>
 	</nav>
-
-    <section class="text-center section-success section-cont" id="tittlepage">
-        <br><br>
-		<div class="container">
-        	<div class="col-xs-12 text-cont">
-				<h1 class="edit-h1">Data Tersimpan!</h1>
-				<span class="text-center success-text">"Terima kasih. Formulir Permohonan Anda telah tersimpan di sistem kami. 
-				<br>Nomor Registrasi Anda adalah<br>
-				<strong><?php echo $noreg;?></strong>.<br>Selanjutnya, mohon lengkapi dokumen di bawah dan dibawa ke Kantor Desa Landungsari."</span>
-				<div class="spacer"></div>
-           		<div class="spacer"></div>
-            	<div class="spacer"></div>
-            </div>
-		</div>
-            <div class="panel-group col-md-6 col-md-offset-3">
-                <div class="panel panel-primary">
-                    <div class="panel-heading bigger">Link Unduh</div>
-                    	<div class="panel-body">
-                        	<ul class="list-menu">
-	                            <li><a href="#">Tampilkan SYARAT IZIN MENDIRIKAN BANGUNAN (IMB) FUNGSI BANGUNGAN.</a></li>
-	                            <li><a href="#">Unduh Surat Pernyataan Para Tetangga</a></li>
-	                            <li><a href="#">Unduh Surat Izin Tempat Usaha</a></li>
-	                            <li><a href="#">Unduh Surat Kuasa.</a></li>
-	                            <li><a href="#">Unduh Denah Lokasi Bangunan.</a></li>
-                        	</ul>
-                    	</div>
-                	</div>
-            	</div>
-        	</div>
-        <div class="clearfix"></div>
-		<a href="<?php echo base_url();?>/<?php echo $back;?>"><button type="button" class="btn btn-primary">Kembali</button></a>
-    </section>
+	
+	<section class="text-center section-success" id="tittlepage">
+		<h1 class="edit-h1">Data Tersimpan!</h1>
+			<span class="text-center success-text">Nomor Registrasi:<br><strong><?php echo $noreg; ?></strong>.<br>Status:<br><b><?php echo $value;?></b></span>
+		<div class="spacer"></div>
+		<div class="spacer"></div>
+ 			<a href="<?php echo base_url();?>/<?php echo $back;?>"><button type="button" class="btn btn-primary">Kembali</button></a>
+	</section>
 
 	<footer>
         <div class="container">
             <div class="row rowkhususho">
-                <div class="col-md-3 col-sm-6 col-xs-12 footer-col">
+                <div class="col-md-3 col-sm-6 col-xs-12 footer-col edit-cont">
                     <h6 class="heading7">LANDUNGSARI</h6>
                     <p>Desa Landungsari memiliki makna yaitu Landung sama dengan "Panjang", Sari adalah "Inti atau Madu", dan dapat diartikan "Panjang Penggalihe, Punjung Rejekine".</p>
                 </div>
@@ -90,13 +67,13 @@
                     <h6 class="heading7">HUBUNGI KAMI</h6>
                     <ul class="footer-ul" style="color:white;">
                         <li><i class="fa fa-map-pin"></i> Pandaan-Pasuruan, 67156</li>
-                        <li><i class="fa fa-phone"></i> Phone  : +62 812-9001-6686</li>
-                        <li><i class="fa fa-envelope"></i> E-mail : admin@madanitech.com</li>
+                        <li><i class="fa fa-phone"></i> +62 812-9001-6686</li>
+                        <li><i class="fa fa-envelope"></i> admin@madanitech.com</li>
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12 footer-col">
                     <h6 class="heading7">SITE STATISTIK</h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12 footer-col">
                     <h6 class="heading7">Social Media</h6>
@@ -111,7 +88,7 @@
                 <div class="spacer"></div>
                 <div class="spacer"></div>
             </div>
-        </div> 
+        </div>
     </footer>
 
     <div class="copyright">
@@ -126,7 +103,7 @@
     </div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="/assets/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url();?>/assets/js/bootstrap.min.js"></script>
 	<script type='text/javascript'>
             $(window).load(function(){
                 $('.carousel-caption').animate({
@@ -163,7 +140,6 @@
 
 	</script>
 	<!--start scroll animation effect-->
-
 	<script>
 		$(function () {
 			$(document).scroll(function () {
@@ -183,71 +159,9 @@
     </script>
 
     <script>
-        var id_pelayanan;
-	$("#ho_recom").hide();
-	$("#imb").hide();
-	$("#kk").hide();
-	$("#ktp").hide();
-	$("#submit").hide();			
-	
 
-	$("#jenis_pelayanan").on('change', function () {
-		id_pelayanan = $(this).val();
-		if (id_pelayanan == 1) {
-			$("#ho_recom").show();
-			$("#imb").hide();
-			$("#kk").hide();
-			$("#ktp").hide();
-		} else if (id_pelayanan == 2) {
-			$("#ho_recom").hide();
-			$("#imb").show();
-			$("#kk").hide();
-			$("#ktp").hide();
-		} else if (id_pelayanan == 3) {
-			$("#ho_recom").hide();
-			$("#imb").hide();
-			$("#kk").show();
-			$("#ktp").hide();
-		} else if (id_pelayanan == 4) {
-			$("#ho_recom").hide();
-			$("#imb").hide();
-			$("#kk").hide();
-			$("#ktp").show();
-		} else {
-			$("#ho_recom").hide();
-			$("#imb").hide();
-			$("#kk").hide();
-			$("#ktp").hide();
-		}
-	});
-
-	
-
-	var jumlah_keluarga;
-	$("#jumlah_keluarga").on('change', function () {
-		jumlah_keluarga = $(this).val();
-		console.log(jumlah_keluarga);
-		if(jumlah_keluarga==0 || jumlah_keluarga==null){
-			$("#submit").hide();			
-		}else{
-			$("#submit").show();			
-			
-		$.ajax({
-			url : "<?php echo base_url()?>Index/kk",
-			type : 'POST',
-			data :  {'jumlah_keluarga' : jumlah_keluarga},
-			dataType: 'json',
-			success : function(data){
-				$('#biodata').html(data);
-			},
-			error: function(){
-				alert('terjadi error');
-			}
-		});
-		}
-
-	});
     </script>
 
 </body>
+
 </html>
